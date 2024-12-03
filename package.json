@@ -1,0 +1,80 @@
+{
+	"name": "carbonio-boilerplate-ui",
+	"version": "0.0.0",
+	"description": "Example module for Zextras Carbonio",
+	"main": "src/app.tsx",
+	"scripts": {
+		"build": "sdk build",
+		"build:dev": "sdk build --dev --pkgRel $(date +%s)",
+		"deploy": "sdk install",
+		"start": "sdk watch",
+		"prepare": "is-ci || husky",
+		"type-check": "tsc --noEmit",
+		"type-check:watch": "npm run type-check -- --watch",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx --resolve-plugins-relative-to node_modules/@zextras/carbonio-ui-configs src",
+		"test": "jest --passWithNoTests"
+	},
+	"keywords": [],
+	"author": "Zextras Dexters Team <https://www.zextras.com/carbonio/>",
+	"maintainers": [
+		"Giuliano Caregnato <giuliano.caregnato@zextras.com>"
+	],
+	"license": "AGPL-3.0-only",
+	"devDependencies": {
+		"@babel/core": "^7.26.0",
+		"@babel/plugin-transform-runtime": "^7.25.9",
+		"@babel/preset-env": "^7.26.0",
+		"@babel/preset-react": "^7.25.9",
+		"@babel/preset-typescript": "^7.26.0",
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.0.1",
+		"@testing-library/user-event": "^14.5.2",
+		"@types/history": "^5.0.0",
+		"@types/jest": "^29.5.14",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"@types/react-router-dom": "^5.3.3",
+		"@types/styled-components": "^5.1.34",
+		"@zextras/carbonio-ui-configs": "^1.0.3",
+		"@zextras/carbonio-ui-sdk": "^1.7.10",
+		"babel-jest": "^29.7.0",
+		"babel-plugin-styled-components": "^2.1.4",
+		"dotenv": "^16.4.5",
+		"eslint-plugin-notice": "^1.0.0",
+		"husky": "^9.1.7",
+		"is-ci": "^3.0.1",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"jest-fail-on-console": "^3.3.1",
+		"jest-junit": "^16.0.0",
+		"ts-node": "^10.9.2"
+	},
+	"dependencies": {
+		"@zextras/carbonio-design-system": "^8.1.0",
+		"@zextras/carbonio-shell-ui": "^9.0.0",
+		"core-js": "^3.39.0",
+		"i18next": "^22.5.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-i18next": "^12.3.1",
+		"react-router-dom": "^5.3.4",
+		"styled-components": "^5.3.11"
+	},
+	"browserslist": [
+		">1%",
+		"last 3 version",
+		"Firefox ESR",
+		"not dead"
+	],
+	"carbonio": {
+		"translations_repository": "<Insert Repo Here>",
+		"name": "carbonio-boilerplate-ui",
+		"priority": 100000,
+		"type": "carbonio",
+		"display": "Boilerplate App",
+		"icon": "Close"
+	}
+}

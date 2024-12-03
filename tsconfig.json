@@ -1,0 +1,12 @@
+{
+  "extends": "@zextras/carbonio-ui-configs/rules/typescript.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
