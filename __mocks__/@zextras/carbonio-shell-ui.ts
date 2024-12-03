@@ -5,24 +5,25 @@
  */
 import type * as Shell from '@zextras/carbonio-shell-ui';
 
-import { APP_ID } from '../../src/constants';
-
 export const addRoute: typeof Shell.addRoute = () => '';
-export const addSettingsView: typeof Shell.addSettingsView = () => '';
-export const addBoardView: typeof Shell.addBoardView = () => '';
-export const addUtilityView: typeof Shell.addUtilityView = () => '';
-export const setAppContext: typeof Shell.setAppContext = () => '';
-export const registerActions: typeof Shell.registerActions = () => '';
-export const addBoard = <T>(
-	board: Parameters<typeof Shell.addBoard<T>>[0]
-): ReturnType<typeof Shell.addBoard<T>> =>
-	({
-		id: APP_ID,
-		app: APP_ID,
-		icon: 'CubeOutline',
-		...board
-	}) as Shell.Board;
+export const registerComponents: typeof Shell.registerComponents = () => '';
+export const registerFunctions: typeof Shell.registerFunctions = () => '';
+export const pushHistory: typeof Shell.pushHistory = () => {};
 
-export const ACTION_TYPES = {
-	NEW: 'new'
-};
+const localStorageStore = new Map<string, unknown>();
+export const useLocalStorage = <T>(
+	key: string,
+	initialValue: T
+): ReturnType<typeof Shell.useLocalStorage<T>> => [
+	(localStorageStore.get(key) as T) ?? initialValue,
+	(value: T | ((prev: T) => void)): void => {
+		if (value instanceof Function) {
+			const currentValue = localStorageStore.get(key);
+			localStorageStore.set(key, value(currentValue as T));
+		} else {
+			localStorageStore.set(key, value);
+		}
+	}
+];
+
+export const useCurrentRoute: typeof Shell.useCurrentRoute = () => undefined;

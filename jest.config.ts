@@ -16,7 +16,7 @@ const config: Config = {
 	// cacheDirectory: "/tmp/jest_rs",
 
 	// Automatically clear mock calls, instances, contexts and results before every test
-	// clearMocks: true,
+	clearMocks: true,
 
 	// Indicates whether the coverage information should be collected while executing the test
 	collectCoverage: true,
@@ -28,7 +28,7 @@ const config: Config = {
 	coverageDirectory: 'coverage',
 
 	// An array of regexp pattern strings used to skip coverage collection
-	coveragePathIgnorePatterns: ['/node_modules/', '/src/tests/', '/src/types'],
+	coveragePathIgnorePatterns: ['/node_modules/', '/src/tests/', '/src/types', '/src/mocks'],
 
 	// Indicates which provider should be used to instrument code for coverage
 	coverageProvider: 'babel',
@@ -54,8 +54,7 @@ const config: Config = {
 
 	// The default configuration for fake timers
 	fakeTimers: {
-		enableGlobally: true,
-		doNotFake: ['queueMicrotask']
+		enableGlobally: true
 	},
 
 	// Force coverage collection from ignored files using an array of glob patterns
@@ -113,7 +112,7 @@ const config: Config = {
 	reporters: ['default', 'jest-junit'],
 
 	// Automatically reset mock state before every test
-	// resetMocks: true,
+	resetMocks: true,
 
 	// Reset the module registry before running each individual test
 	// resetModules: false,

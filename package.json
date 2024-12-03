@@ -1,7 +1,7 @@
 {
-	"name": "carbonio-boilerplate-ui",
+	"name": "carbonio-search-ui",
 	"version": "0.0.0",
-	"description": "Example module for Zextras Carbonio",
+	"description": "Search module for Zextras Carbonio",
 	"main": "src/app.tsx",
 	"scripts": {
 		"build": "sdk build",
@@ -15,10 +15,7 @@
 		"test": "jest --passWithNoTests"
 	},
 	"keywords": [],
-	"author": "Zextras Dexters Team <https://www.zextras.com/carbonio/>",
-	"maintainers": [
-		"Giuliano Caregnato <giuliano.caregnato@zextras.com>"
-	],
+	"author": "Zextras Team <https://www.zextras.com/carbonio/>",
 	"license": "AGPL-3.0-only",
 	"devDependencies": {
 		"@babel/core": "^7.26.0",
@@ -57,11 +54,13 @@
 		"@zextras/carbonio-shell-ui": "^9.0.0",
 		"core-js": "^3.39.0",
 		"i18next": "^22.5.1",
+		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-i18next": "^12.3.1",
 		"react-router-dom": "^5.3.4",
-		"styled-components": "^5.3.11"
+		"styled-components": "^5.3.11",
+		"zustand": "^5.0.1"
 	},
 	"browserslist": [
 		">1%",
@@ -70,11 +69,11 @@
 		"not dead"
 	],
 	"carbonio": {
-		"translations_repository": "<Insert Repo Here>",
-		"name": "carbonio-boilerplate-ui",
-		"priority": 100000,
+		"translations_repository": "",
+		"name": "carbonio-search-ui",
+		"priority": 1000,
 		"type": "carbonio",
-		"display": "Boilerplate App",
-		"icon": "Close"
+		"display": "Search",
+		"icon": "SearchModOutline"
 	}
 }

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 // import the original type declarations
-import * as i18next from 'i18next';
+import type * as i18next from 'i18next';
 
 declare module 'i18next' {
 	// Extend CustomTypeOptions

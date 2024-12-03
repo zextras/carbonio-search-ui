@@ -6,83 +6,25 @@
 
 import React, { type ReactElement, useMemo } from 'react';
 
-import {
-	type ByRoleMatcher,
-	type ByRoleOptions,
-	type GetAllBy,
-	queries,
-	queryHelpers,
-	render,
-	screen,
-	type RenderOptions,
-	type RenderResult,
-	within
-} from '@testing-library/react';
+import { render, type RenderOptions, type RenderResult, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ModalManager, SnackbarManager, ThemeProvider } from '@zextras/carbonio-design-system';
 import i18next, { type i18n } from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 
+import type { ExtendedQueries } from './queries';
+import { extendedQueries } from './queries';
+
 export type UserEvent = ReturnType<(typeof userEvent)['setup']> & {
 	readonly rightClick: (target: Element) => Promise<void>;
 };
-
-type ByRoleWithIconOptions = ByRoleOptions & {
-	icon: string | RegExp;
-};
-
-type ExtendedQueries = typeof queries & typeof customQueries;
-/**
- * Matcher function to search an icon button through the icon data-testid
- */
-const queryAllByRoleWithIcon: GetAllBy<[ByRoleMatcher, ByRoleWithIconOptions]> = (
-	container,
-	role,
-	{ icon, ...options }
-) =>
-	screen
-		.queryAllByRole('button', options)
-		.filter((element) => within(element).queryByTestId(`icon: ${icon}`) !== null);
-
-const getByRoleWithIconMultipleError = (
-	container: Element | null,
-	role: ByRoleMatcher,
-	options: ByRoleWithIconOptions
-): string => `Found multiple elements with role ${role} and icon ${options.icon}`;
-const getByRoleWithIconMissingError = (
-	container: Element | null,
-	role: ByRoleMatcher,
-	options: ByRoleWithIconOptions
-): string => `Unable to find an element with role ${role} and icon ${options.icon}`;
-
-const [
-	queryByRoleWithIcon,
-	getAllByRoleWithIcon,
-	getByRoleWithIcon,
-	findAllByRoleWithIcon,
-	findByRoleWithIcon
-] = queryHelpers.buildQueries<[ByRoleMatcher, ByRoleWithIconOptions]>(
-	queryAllByRoleWithIcon,
-	getByRoleWithIconMultipleError,
-	getByRoleWithIconMissingError
-);
-
-const customQueries = {
-	// byRoleWithIcon
-	queryByRoleWithIcon,
-	getAllByRoleWithIcon,
-	getByRoleWithIcon,
-	findAllByRoleWithIcon,
-	findByRoleWithIcon
-};
-const extendedQueries: ExtendedQueries = { ...queries, ...customQueries };
 
 const customWithin = (
 	element: Parameters<typeof within<ExtendedQueries>>[0]
 ): ReturnType<typeof within<ExtendedQueries>> => within(element, extendedQueries);
 
-export const customScreen = within(document.body);
+export const customScreen = customWithin(document.body);
 
 export { customWithin as within, customScreen as screen };
 

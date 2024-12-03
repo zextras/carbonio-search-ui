@@ -6,13 +6,18 @@
 module.exports = {
 	extends: ['./node_modules/@zextras/carbonio-ui-configs/rules/eslint.js'],
 	plugins: ['notice'],
+	parserOptions: {
+		project: ['tsconfig.json']
+	},
 	rules: {
 		'notice/notice': [
 			'error',
 			{
 				templateFile: '.reuse/template.js'
 			}
-		]
+		],
+		'@typescript-eslint/consistent-type-exports': 'error',
+		'@typescript-eslint/consistent-type-imports': 'error'
 	},
 	overrides: [
 		{
