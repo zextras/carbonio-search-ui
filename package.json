@@ -5,8 +5,6 @@
 	"files": ["lib", "COPYING", "THIRDPARTIES", "README.md"],
 	"exports": {
 		".": {
-			"require": "./lib/lib.js",
-			"import": "./lib/lib.js",
 			"types": "./lib/lib.d.ts"
 		},
 		"./*": null

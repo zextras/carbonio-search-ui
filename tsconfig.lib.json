@@ -14,7 +14,7 @@
     "module": "NodeNext",
     "outDir": "lib",
     "declaration": true,
-    "emitDeclarationOnly": false,
+    "emitDeclarationOnly": true,
     "lib": ["es2022", "dom", "dom.iterable"],
     "types": ["node", "./src/types/i18next.d.ts", "./src/types/styled-components.d.ts"]
   },
