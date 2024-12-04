@@ -4,17 +4,6 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { pushHistory } from '@zextras/carbonio-shell-ui';
-
-import { APP_ID } from '../constants';
-import type { QueryChip } from '../stores/search-store';
-import { useSearchStore } from '../stores/search-store';
-
-export const runSearch = (query: QueryChip[], module: string): void => {
-	useSearchStore.setState({ query, module, searchDisabled: false });
-	pushHistory({ route: APP_ID, path: '' });
-};
-
 function addIfNotPresent<T extends { id: unknown }>(
 	items: T[],
 	itemToAdd: T,

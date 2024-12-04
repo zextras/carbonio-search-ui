@@ -7,17 +7,7 @@ import { useEffect } from 'react';
 
 import { registerComponents, registerFunctions } from '@zextras/carbonio-shell-ui';
 
-import { ResultsHeader } from '../components/results-header';
-import { SearchBar } from '../components/search-bar';
-import type { SearchView } from '../stores/app-store';
-import { useAppStore } from '../stores/app-store';
-import { runSearch } from '../utils/utils';
-
-const addSearchViewIntegrationFunction: (data: SearchView) => string =
-	useAppStore.getState().addSearchView;
-
-const removeSearchViewIntegrationFunction: (id: string) => void =
-	useAppStore.getState().removeSearchView;
+import { addSearchView, removeSearchView, ResultsHeader, runSearch, SearchBar } from '../lib';
 
 export const useIntegrationRegisterer = (): void => {
 	useEffect(() => {
@@ -33,11 +23,11 @@ export const useIntegrationRegisterer = (): void => {
 
 		registerFunctions({
 			id: 'search-add-view',
-			fn: addSearchViewIntegrationFunction
+			fn: addSearchView
 		});
 		registerFunctions({
 			id: 'search-remove-view',
-			fn: removeSearchViewIntegrationFunction
+			fn: removeSearchView
 		});
 		registerFunctions({
 			id: 'search-run-search',

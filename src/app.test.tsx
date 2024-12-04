@@ -11,9 +11,9 @@ import App from './app';
 import { AppView } from './components/app-view';
 import { ResultsHeader } from './components/results-header';
 import { SearchBar } from './components/search-bar';
-import { APP_ID } from './constants';
+import { APP_ID, APP_ROUTE } from './constants';
+import { addSearchView, removeSearchView, runSearch } from './lib';
 import { setup } from './tests/utils';
-import { runSearch } from './utils/utils';
 
 describe('App', () => {
 	it('should register search route', () => {
@@ -23,7 +23,7 @@ describe('App', () => {
 			expect.objectContaining<Parameters<typeof Shell.addRoute>[0]>({
 				id: APP_ID,
 				app: APP_ID,
-				route: APP_ID,
+				route: APP_ROUTE,
 				appView: AppView,
 				badge: {
 					show: false
@@ -68,7 +68,7 @@ describe('App', () => {
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-add-view',
-			fn: expect.any(Function)
+			fn: addSearchView
 		});
 	});
 
@@ -77,7 +77,7 @@ describe('App', () => {
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-remove-view',
-			fn: expect.any(Function)
+			fn: removeSearchView
 		});
 	});
 });

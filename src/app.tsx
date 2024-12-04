@@ -10,7 +10,7 @@ import { addRoute } from '@zextras/carbonio-shell-ui';
 import { useTranslation } from 'react-i18next';
 
 import { AppView } from './components/app-view';
-import { APP_ID } from './constants';
+import { APP_ID, APP_ROUTE } from './constants';
 import { useIntegrationRegisterer } from './hooks/use-integration-registerer';
 
 const App = (): null => {
@@ -19,7 +19,7 @@ const App = (): null => {
 		addRoute({
 			id: APP_ID,
 			app: APP_ID,
-			route: APP_ID,
+			route: APP_ROUTE,
 			appView: AppView,
 			badge: {
 				show: false
