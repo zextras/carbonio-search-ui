@@ -392,32 +392,35 @@ export const SearchBar = (): React.JSX.Element => {
 					</Container>
 
 					{!searchButtonsAreDisabled && (
-						<Tooltip label={clearButtonPlaceholder} placement="bottom">
+						<Container width={'fit-content'} height={'fit-content'} flexShrink={0}>
+							<Tooltip label={clearButtonPlaceholder} placement="bottom">
+								<Button
+									size="extralarge"
+									type="outlined"
+									disabled={searchButtonsAreDisabled}
+									icon="BackspaceOutline"
+									color="primary"
+									onClick={clearSearch}
+								/>
+							</Tooltip>
+						</Container>
+					)}
+					<Container width={'fit-content'} height={'fit-content'} flexShrink={0}>
+						<Tooltip
+							maxWidth="100%"
+							disabled={searchDisabled}
+							label={searchBtnTooltipLabel}
+							placement="bottom"
+						>
 							<Button
-								size="large"
-								type="outlined"
+								size="extralarge"
+								icon="Search"
 								disabled={searchButtonsAreDisabled}
-								icon="BackspaceOutline"
 								color="primary"
-								onClick={clearSearch}
+								onClick={onSearch}
 							/>
 						</Tooltip>
-					)}
-
-					<Tooltip
-						maxWidth="100%"
-						disabled={searchDisabled}
-						label={searchBtnTooltipLabel}
-						placement="bottom"
-					>
-						<Button
-							size="large"
-							icon="Search"
-							disabled={searchButtonsAreDisabled}
-							color="primary"
-							onClick={onSearch}
-						/>
-					</Tooltip>
+					</Container>
 				</Container>
 			</Tooltip>
 		</Container>
