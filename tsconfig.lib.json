@@ -1,22 +1,8 @@
 {
+  "extends": ["@zextras/carbonio-ui-configs/rules/tsconfig.lib.json"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "es2022",
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "module": "NodeNext",
-    "outDir": "lib",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "lib": ["es2022", "dom", "dom.iterable"],
-    "types": ["node", "./src/types/i18next.d.ts", "./src/types/styled-components.d.ts"]
+    "types": ["node", "./src/types/i18next.d.ts", "./src/types/styled-components.d.ts"],
+    "outDir": "lib"
   },
   "files": [
     "src/lib.ts"
