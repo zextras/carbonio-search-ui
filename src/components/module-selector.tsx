@@ -27,7 +27,7 @@ const SelectorContainer = styled(Container)`
 export const ModuleSelector = (): React.JSX.Element | null => {
 	const currentRoute = useCurrentRoute();
 	const searchViews = useAppStore((s) => s.views);
-	const [module, updateModule] = useSearchModule();
+	const { module, setModule: updateModule } = useSearchModule();
 	const searchView = useMemo(
 		() => searchViews.find((m) => m.route === module),
 		[module, searchViews]

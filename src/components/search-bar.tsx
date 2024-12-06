@@ -55,7 +55,7 @@ export const SearchBar = (): React.JSX.Element => {
 		[]
 	);
 	const [inputTyped, setInputTyped] = useState<string>('');
-	const [currentSearchModuleRoute] = useSearchModule();
+	const { module: currentSearchModuleRoute } = useSearchModule();
 	const { updateQuery, query, searchDisabled, setSearchDisabled, tooltip } = useSearchStore();
 	const modules = useAppStore((state) => state.views);
 	const moduleLabel = useMemo(

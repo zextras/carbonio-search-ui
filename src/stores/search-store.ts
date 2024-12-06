@@ -11,6 +11,7 @@ export type QueryChip = ChipItem<string> & { app?: string };
 export type SearchState = {
 	query: QueryChip[];
 	module?: string;
+	lastVisibleModule?: string;
 	searchDisabled: boolean;
 	tooltip?: string;
 };
@@ -25,6 +26,7 @@ export const useSearchStore = create<SearchState & SearchActions>()((set, get) =
 	query: [],
 	searchDisabled: false,
 	module: undefined,
+	lastVisibleModule: undefined,
 	tooltip: undefined,
 	setSearchDisabled: (searchDisabled: boolean, tooltip?: string): void =>
 		set({ searchDisabled, tooltip }),
