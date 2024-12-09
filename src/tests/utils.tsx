@@ -15,6 +15,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import type { ExtendedQueries } from './queries';
 import { extendedQueries } from './queries';
+import { APP_ID } from '../constants';
 
 export type UserEvent = ReturnType<(typeof userEvent)['setup']> & {
 	readonly rightClick: (target: Element) => Promise<void>;
@@ -28,7 +29,12 @@ export const customScreen = customWithin(document.body);
 
 export { customWithin as within, customScreen as screen };
 
-const getAppI18n = (): i18n => {
+const i18nInstances: Record<string, i18n> = {};
+export const getAppI18n = (app: string): i18n => {
+	const appI18nInstance = i18nInstances[app];
+	if (appI18nInstance !== undefined) {
+		return appI18nInstance;
+	}
 	const newI18n = i18next.createInstance();
 	newI18n
 		// init i18next
@@ -43,6 +49,7 @@ const getAppI18n = (): i18n => {
 			},
 			resources: { en: { translation: {} } }
 		});
+	i18nInstances[app] = newI18n;
 	return newI18n;
 };
 
@@ -52,11 +59,13 @@ interface WrapperProps {
 }
 
 export const I18NextTestProvider = ({
+	app,
 	children
 }: {
+	app: string;
 	children: React.ReactNode;
 }): React.JSX.Element => {
-	const i18nInstance = useMemo(() => getAppI18n(), []);
+	const i18nInstance = useMemo(() => getAppI18n(app), [app]);
 
 	return <I18nextProvider i18n={i18nInstance}>{children}</I18nextProvider>;
 };
@@ -70,7 +79,7 @@ const Wrapper = ({ initialRouterEntries, children }: WrapperProps): React.JSX.El
 				: 0
 		}
 	>
-		<I18NextTestProvider>
+		<I18NextTestProvider app={APP_ID}>
 			<ThemeProvider>
 				<SnackbarManager>
 					<ModalManager>{children}</ModalManager>

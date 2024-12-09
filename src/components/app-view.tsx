@@ -6,7 +6,7 @@
 
 import React, { useEffect, useMemo } from 'react';
 
-import { replaceHistory, useCurrentRoute } from '@zextras/carbonio-shell-ui';
+import { AppContextProvider, replaceHistory, useCurrentRoute } from '@zextras/carbonio-shell-ui';
 
 import { ResultsHeader } from './results-header';
 import { APP_ROUTE } from '../constants';
@@ -40,11 +40,13 @@ export const AppView = (): React.JSX.Element => {
 	return (
 		<>
 			{searchView && (
-				<searchView.component
-					useQuery={useQuery}
-					ResultsHeader={ResultsHeader}
-					useDisableSearch={useDisableSearch}
-				/>
+				<AppContextProvider pkg={searchView.app}>
+					<searchView.component
+						useQuery={useQuery}
+						ResultsHeader={ResultsHeader}
+						useDisableSearch={useDisableSearch}
+					/>
+				</AppContextProvider>
 			)}
 		</>
 	);
