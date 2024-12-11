@@ -60,7 +60,7 @@
 		"ts-node": "^10.9.2"
 	},
 	"dependencies": {
-		"@zextras/carbonio-design-system": "9.0.0-devel.11",
+		"@zextras/carbonio-design-system": "9.0.0-devel.12",
 		"@zextras/carbonio-shell-ui": "devel",
 		"core-js": "^3.39.0",
 		"i18next": "^22.5.1",

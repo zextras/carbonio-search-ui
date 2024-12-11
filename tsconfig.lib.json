@@ -1,7 +1,7 @@
 {
   "extends": ["@zextras/carbonio-ui-configs/rules/tsconfig.lib.json"],
   "compilerOptions": {
-    "types": ["node", "./src/types/i18next.d.ts", "./src/types/styled-components.d.ts"],
+    "types": ["node", "./src/types/i18next.d.ts"],
     "outDir": "lib"
   },
   "files": [
