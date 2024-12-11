@@ -6,87 +6,35 @@
 
 import React, { type ReactElement, useMemo } from 'react';
 
-import {
-	type ByRoleMatcher,
-	type ByRoleOptions,
-	type GetAllBy,
-	queries,
-	queryHelpers,
-	render,
-	screen,
-	type RenderOptions,
-	type RenderResult,
-	within
-} from '@testing-library/react';
+import { render, type RenderOptions, type RenderResult, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ModalManager, SnackbarManager, ThemeProvider } from '@zextras/carbonio-design-system';
 import i18next, { type i18n } from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 
+import type { ExtendedQueries } from './queries';
+import { extendedQueries } from './queries';
+import { APP_ID } from '../constants';
+
 export type UserEvent = ReturnType<(typeof userEvent)['setup']> & {
 	readonly rightClick: (target: Element) => Promise<void>;
 };
-
-type ByRoleWithIconOptions = ByRoleOptions & {
-	icon: string | RegExp;
-};
-
-type ExtendedQueries = typeof queries & typeof customQueries;
-/**
- * Matcher function to search an icon button through the icon data-testid
- */
-const queryAllByRoleWithIcon: GetAllBy<[ByRoleMatcher, ByRoleWithIconOptions]> = (
-	container,
-	role,
-	{ icon, ...options }
-) =>
-	screen
-		.queryAllByRole('button', options)
-		.filter((element) => within(element).queryByTestId(`icon: ${icon}`) !== null);
-
-const getByRoleWithIconMultipleError = (
-	container: Element | null,
-	role: ByRoleMatcher,
-	options: ByRoleWithIconOptions
-): string => `Found multiple elements with role ${role} and icon ${options.icon}`;
-const getByRoleWithIconMissingError = (
-	container: Element | null,
-	role: ByRoleMatcher,
-	options: ByRoleWithIconOptions
-): string => `Unable to find an element with role ${role} and icon ${options.icon}`;
-
-const [
-	queryByRoleWithIcon,
-	getAllByRoleWithIcon,
-	getByRoleWithIcon,
-	findAllByRoleWithIcon,
-	findByRoleWithIcon
-] = queryHelpers.buildQueries<[ByRoleMatcher, ByRoleWithIconOptions]>(
-	queryAllByRoleWithIcon,
-	getByRoleWithIconMultipleError,
-	getByRoleWithIconMissingError
-);
-
-const customQueries = {
-	// byRoleWithIcon
-	queryByRoleWithIcon,
-	getAllByRoleWithIcon,
-	getByRoleWithIcon,
-	findAllByRoleWithIcon,
-	findByRoleWithIcon
-};
-const extendedQueries: ExtendedQueries = { ...queries, ...customQueries };
 
 const customWithin = (
 	element: Parameters<typeof within<ExtendedQueries>>[0]
 ): ReturnType<typeof within<ExtendedQueries>> => within(element, extendedQueries);
 
-export const customScreen = within(document.body);
+export const customScreen = customWithin(document.body);
 
 export { customWithin as within, customScreen as screen };
 
-const getAppI18n = (): i18n => {
+const i18nInstances: Record<string, i18n> = {};
+export const getAppI18n = (app: string): i18n => {
+	const appI18nInstance = i18nInstances[app];
+	if (appI18nInstance !== undefined) {
+		return appI18nInstance;
+	}
 	const newI18n = i18next.createInstance();
 	newI18n
 		// init i18next
@@ -101,6 +49,7 @@ const getAppI18n = (): i18n => {
 			},
 			resources: { en: { translation: {} } }
 		});
+	i18nInstances[app] = newI18n;
 	return newI18n;
 };
 
@@ -110,11 +59,13 @@ interface WrapperProps {
 }
 
 export const I18NextTestProvider = ({
+	app,
 	children
 }: {
+	app: string;
 	children: React.ReactNode;
 }): React.JSX.Element => {
-	const i18nInstance = useMemo(() => getAppI18n(), []);
+	const i18nInstance = useMemo(() => getAppI18n(app), [app]);
 
 	return <I18nextProvider i18n={i18nInstance}>{children}</I18nextProvider>;
 };
@@ -128,7 +79,7 @@ const Wrapper = ({ initialRouterEntries, children }: WrapperProps): React.JSX.El
 				: 0
 		}
 	>
-		<I18NextTestProvider>
+		<I18NextTestProvider app={APP_ID}>
 			<ThemeProvider>
 				<SnackbarManager>
 					<ModalManager>{children}</ModalManager>

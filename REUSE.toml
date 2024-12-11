@@ -1,0 +1,15 @@
+version = 1
+SPDX-PackageName = "carbonio-search-ui"
+SPDX-PackageSupplier = "Zextras <https://www.zextras.com>"
+
+[[annotations]]
+path = [".husky/**", ".nvmrc", "package.json", "package-lock.json", "tsconfig**.json", ".env.example", ".github/**", "THIRDPARTIES"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "CHANGELOG.md"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"

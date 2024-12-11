@@ -11,3 +11,6 @@
 /coverage
 /.idea
 .env
+/lib
+*.tgz
+/LICENSES

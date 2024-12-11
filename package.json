@@ -1,24 +1,31 @@
 {
-	"name": "carbonio-boilerplate-ui",
+	"name": "@zextras/carbonio-search-ui",
 	"version": "0.0.0",
-	"description": "Example module for Zextras Carbonio",
-	"main": "src/app.tsx",
+	"description": "Search module for Zextras Carbonio",
+	"files": [
+		"lib",
+		"THIRDPARTIES"
+	],
+	"exports": {
+		".": {
+			"types": "./lib/lib.d.ts"
+		},
+		"./*": null
+	},
 	"scripts": {
 		"build": "sdk build",
 		"build:dev": "sdk build --dev --pkgRel $(date +%s)",
+		"build:lib": "rm -rf lib && tsc -P tsconfig.lib.json",
 		"deploy": "sdk install",
 		"start": "sdk watch",
-		"prepare": "is-ci || husky",
+		"prepare": "is-ci || (husky; npm run build:lib)",
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "npm run type-check -- --watch",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx --resolve-plugins-relative-to node_modules/@zextras/carbonio-ui-configs src",
 		"test": "jest --passWithNoTests"
 	},
 	"keywords": [],
-	"author": "Zextras Dexters Team <https://www.zextras.com/carbonio/>",
-	"maintainers": [
-		"Giuliano Caregnato <giuliano.caregnato@zextras.com>"
-	],
+	"author": "Zextras Team <https://www.zextras.com/carbonio/>",
 	"license": "AGPL-3.0-only",
 	"devDependencies": {
 		"@babel/core": "^7.26.0",
@@ -38,7 +45,7 @@
 		"@types/react-dom": "^18.3.1",
 		"@types/react-router-dom": "^5.3.3",
 		"@types/styled-components": "^5.1.34",
-		"@zextras/carbonio-ui-configs": "^1.0.3",
+		"@zextras/carbonio-ui-configs": "^2.0.1",
 		"@zextras/carbonio-ui-sdk": "^1.7.10",
 		"babel-jest": "^29.7.0",
 		"babel-plugin-styled-components": "^2.1.4",
@@ -53,15 +60,17 @@
 		"ts-node": "^10.9.2"
 	},
 	"dependencies": {
-		"@zextras/carbonio-design-system": "^8.1.0",
-		"@zextras/carbonio-shell-ui": "^9.0.0",
+		"@zextras/carbonio-design-system": "9.0.0-devel.12",
+		"@zextras/carbonio-shell-ui": "devel",
 		"core-js": "^3.39.0",
 		"i18next": "^22.5.1",
+		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-i18next": "^12.3.1",
 		"react-router-dom": "^5.3.4",
-		"styled-components": "^5.3.11"
+		"styled-components": "^6.1.13",
+		"zustand": "^5.0.1"
 	},
 	"browserslist": [
 		">1%",
@@ -70,11 +79,11 @@
 		"not dead"
 	],
 	"carbonio": {
-		"translations_repository": "<Insert Repo Here>",
-		"name": "carbonio-boilerplate-ui",
-		"priority": 100000,
+		"translations_repository": "",
+		"name": "carbonio-search-ui",
+		"priority": 1000,
 		"type": "carbonio",
-		"display": "Boilerplate App",
-		"icon": "Close"
+		"display": "Search",
+		"icon": "SearchModOutline"
 	}
 }

@@ -8,35 +8,76 @@ import React from 'react';
 import * as Shell from '@zextras/carbonio-shell-ui';
 
 import App from './app';
-import { APP_ID, MAIN_ROUTE, SECONDARY_ROUTE } from './constants';
+import { AppView } from './components/app-view';
+import { ResultsHeader } from './components/results-header';
+import { SearchBar } from './components/search-bar';
+import { APP_ID, APP_ROUTE } from './constants';
+import { addSearchView, removeSearchView, runSearch } from './lib';
 import { setup } from './tests/utils';
 
 describe('App', () => {
-	it('should register main route', () => {
+	it('should register search route', () => {
 		const addRouteFn = jest.spyOn(Shell, 'addRoute');
 		setup(<App />);
 		expect(addRouteFn).toHaveBeenCalledWith(
 			expect.objectContaining<Parameters<typeof Shell.addRoute>[0]>({
-				id: `${APP_ID}-${MAIN_ROUTE}`,
-				route: MAIN_ROUTE
-			})
-		);
-		expect(addRouteFn).toHaveBeenCalledWith(
-			expect.objectContaining<Parameters<typeof Shell.addRoute>[0]>({
-				id: `${APP_ID}-${SECONDARY_ROUTE}`,
-				route: SECONDARY_ROUTE
+				id: APP_ID,
+				app: APP_ID,
+				route: APP_ROUTE,
+				appView: AppView,
+				badge: {
+					show: false
+				},
+				label: 'Search',
+				position: 1000,
+				visible: true,
+				primaryBar: 'SearchModOutline'
 			})
 		);
 	});
 
-	it('should register secondary route', () => {
-		const addRouteFn = jest.spyOn(Shell, 'addRoute');
+	it('should register SearchBar component integration', () => {
+		const registerComponentsFn = jest.spyOn(Shell, 'registerComponents');
 		setup(<App />);
-		expect(addRouteFn).toHaveBeenCalledWith(
-			expect.objectContaining<Parameters<typeof Shell.addRoute>[0]>({
-				id: `${APP_ID}-${SECONDARY_ROUTE}`,
-				route: SECONDARY_ROUTE
-			})
-		);
+		expect(registerComponentsFn).toHaveBeenCalledWith({
+			id: 'search-bar',
+			component: SearchBar
+		});
+	});
+
+	it('should register ResultsHeader component integration', () => {
+		const registerComponentsFn = jest.spyOn(Shell, 'registerComponents');
+		setup(<App />);
+		expect(registerComponentsFn).toHaveBeenCalledWith({
+			id: 'search-results-header',
+			component: ResultsHeader
+		});
+	});
+
+	it('should register runSearch function integration', () => {
+		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		setup(<App />);
+		expect(registerFunctionsFn).toHaveBeenCalledWith({
+			id: 'search-run-search',
+			fn: runSearch
+		});
+	});
+
+	it('should register addSearchView function integration', () => {
+		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		setup(<App />);
+		expect(registerFunctionsFn).toHaveBeenCalledWith({
+			id: 'search-add-view',
+			fn: addSearchView
+		});
+	});
+
+	it('should register removeSearchView function integration', () => {
+		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		setup(<App />);
+		expect(registerFunctionsFn).toHaveBeenCalledWith({
+			id: 'search-remove-view',
+			fn: removeSearchView
+		});
 	});
 });
