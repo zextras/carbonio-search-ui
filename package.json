@@ -45,7 +45,7 @@
 		"@types/react-dom": "^18.3.1",
 		"@types/react-router-dom": "^5.3.3",
 		"@types/styled-components": "^5.1.34",
-		"@zextras/carbonio-ui-configs": "file:zextras-carbonio-ui-configs-0.0.0-semantically-released.tgz",
+		"@zextras/carbonio-ui-configs": "^2.0.1",
 		"@zextras/carbonio-ui-sdk": "^1.7.10",
 		"babel-jest": "^29.7.0",
 		"babel-plugin-styled-components": "^2.1.4",
@@ -61,7 +61,7 @@
 	},
 	"dependencies": {
 		"@zextras/carbonio-design-system": "9.0.0-devel.11",
-		"@zextras/carbonio-shell-ui": "file:zextras-carbonio-shell-ui-9.0.0.tgz",
+		"@zextras/carbonio-shell-ui": "devel",
 		"core-js": "^3.39.0",
 		"i18next": "^22.5.1",
 		"immer": "^10.1.1",
