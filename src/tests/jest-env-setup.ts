@@ -17,10 +17,7 @@ failOnConsole({
 
 beforeEach(() => {});
 
-beforeAll(() => {
-	const retryTimes = process.env.JEST_RETRY_TIMES ? parseInt(process.env.JEST_RETRY_TIMES, 10) : 2;
-	jest.retryTimes(retryTimes, { logErrorsBeforeRetry: true });
-});
+beforeAll(() => {});
 
 afterAll(() => {});
 
