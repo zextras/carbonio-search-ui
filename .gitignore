@@ -14,3 +14,4 @@
 /lib
 *.tgz
 /LICENSES
+.tool-versions
