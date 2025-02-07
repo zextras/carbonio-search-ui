@@ -70,7 +70,7 @@ describe('Search bar', () => {
 			).toBeVisible();
 		});
 
-		it.each(['[Enter]', ',', '[Space]'])(
+		it.each(['[Enter]', ','])(
 			'should enable the search button when the user presses keyboard key (%s) to add the chips',
 			async (key) => {
 				const { user } = setup(<SearchBar />);
@@ -372,7 +372,7 @@ describe('Search bar', () => {
 				screen.getByRole('textbox', { name: `Search in ${app1SearchView.label}` }),
 				'key1'
 			);
-			await user.type(screen.getByRole('textbox'), ' ');
+			await user.type(screen.getByRole('textbox'), ',');
 			expect(localStorageStore[LOCAL_STORAGE_SEARCH_KEY]).toContainEqual({
 				value: 'key1',
 				label: 'key1',

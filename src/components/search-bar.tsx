@@ -271,7 +271,7 @@ export const SearchBar = (): React.JSX.Element => {
 	const placeholder = useMemo(
 		() =>
 			inputHasFocus && currentSearchModuleRoute
-				? t('search.active_input_label', 'Separate your keywords by a comma or pressing TAB')
+				? t('search.active_input_label', 'Separate your keywords by a comma')
 				: t('search.idle_input_label', 'Search in {{module}}', {
 						module: moduleLabel
 					}),
@@ -374,8 +374,7 @@ export const SearchBar = (): React.JSX.Element => {
 									confirmChipOnBlur={false}
 									separators={[
 										{ key: 'Enter', ctrlKey: false },
-										{ key: ',', ctrlKey: false },
-										{ key: ' ', ctrlKey: false }
+										{ key: ',', ctrlKey: false }
 									]}
 									background={searchDisabled ? 'gray5' : 'gray6'}
 									onChange={onQueryChange}
