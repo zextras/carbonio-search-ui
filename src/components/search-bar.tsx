@@ -347,8 +347,7 @@ export const SearchBar = (): React.JSX.Element => {
 				disabled={!searchDisabled}
 				maxWidth="100%"
 				label={
-					tooltip ??
-					t('unable_to_parse_query', 'Unable to complete the search, clear it and retry')
+					tooltip ?? t('unable_to_parse_query', 'Unable to complete the search, clear it and retry')
 				}
 			>
 				<Container
