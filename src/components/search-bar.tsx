@@ -271,8 +271,8 @@ export const SearchBar = (): React.JSX.Element => {
 	const placeholder = useMemo(
 		() =>
 			inputHasFocus && currentSearchModuleRoute
-				? t('search.active_input_label', 'Separate your keywords by a comma')
-				: t('search.idle_input_label', 'Search in {{module}}', {
+				? t('active_input_label', 'Separate your keywords by a comma')
+				: t('idle_input_label', 'Search in {{module}}', {
 						module: moduleLabel
 					}),
 		[currentSearchModuleRoute, inputHasFocus, moduleLabel, t]
@@ -281,8 +281,8 @@ export const SearchBar = (): React.JSX.Element => {
 	const clearButtonPlaceholder = useMemo(
 		() =>
 			showClear || isTyping
-				? t('search.clear', 'Clear search input')
-				: t('search.already_clear', 'Search input is already clear'),
+				? t('clear', 'Clear search input')
+				: t('already_clear', 'Search input is already clear'),
 		[showClear, t, isTyping]
 	);
 
@@ -293,7 +293,7 @@ export const SearchBar = (): React.JSX.Element => {
 
 	const searchBtnTooltipLabel = useMemo(() => {
 		if (!searchButtonsAreDisabled && searchInputValue.length > 0) {
-			return t('search.start', 'Start search');
+			return t('start', 'Start search');
 		}
 		if (inputHasFocus) {
 			return t(
@@ -307,7 +307,7 @@ export const SearchBar = (): React.JSX.Element => {
 		if (query.length > 0) {
 			return t('label.edit_to_start_search', 'Edit your search to start a new one');
 		}
-		return t('search.type_to_start_search', 'Type some keywords to start a search');
+		return t('type_to_start_search', 'Type some keywords to start a search');
 	}, [searchButtonsAreDisabled, searchInputValue.length, inputHasFocus, query.length, t]);
 
 	const onChipAdd = useCallback<SearchChipInputProps<'onAdd'>>(
@@ -347,8 +347,7 @@ export const SearchBar = (): React.JSX.Element => {
 				disabled={!searchDisabled}
 				maxWidth="100%"
 				label={
-					tooltip ??
-					t('search.unable_to_parse_query', 'Unable to complete the search, clear it and retry')
+					tooltip ?? t('unable_to_parse_query', 'Unable to complete the search, clear it and retry')
 				}
 			>
 				<Container

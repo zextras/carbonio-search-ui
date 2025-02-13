@@ -24,7 +24,7 @@ const App = (): null => {
 			badge: {
 				show: false
 			},
-			label: t('search.app', 'Search'),
+			label: t('app', 'Search'),
 			position: 1000,
 			visible: true,
 			primaryBar: 'SearchModOutline'
