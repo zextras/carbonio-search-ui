@@ -214,7 +214,7 @@ export const SearchBar = (): React.JSX.Element => {
 			//  So, at the moment, keywords never searched for are saved too.
 			saveSuggestions(newQuery);
 
-			setSearchInputValue(newQuery);
+			setSearchInputValue(newQuery.map((q) => ({ ...q, value: `"${q.value}"` })));
 		},
 		[saveSuggestions]
 	);
