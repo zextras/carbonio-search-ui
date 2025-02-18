@@ -72,6 +72,7 @@ export const I18NextTestProvider = ({
 
 const Wrapper = ({ initialRouterEntries, children }: WrapperProps): React.JSX.Element => (
 	<MemoryRouter
+		future={{ v7_relativeSplatPath: true, v7_startTransition: true }}
 		initialEntries={initialRouterEntries}
 		initialIndex={
 			initialRouterEntries !== undefined && initialRouterEntries.length > 0

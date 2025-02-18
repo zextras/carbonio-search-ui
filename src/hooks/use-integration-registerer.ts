@@ -3,13 +3,25 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { registerComponents, registerFunctions } from '@zextras/carbonio-shell-ui';
+import { useNavigate } from 'react-router-dom';
 
+import { APP_ROUTE } from '../constants';
 import { addSearchView, removeSearchView, ResultsHeader, runSearch, SearchBar } from '../lib';
 
 export const useIntegrationRegisterer = (): void => {
+	const navigate = useNavigate();
+
+	const runSearchCallback = useCallback<typeof runSearch>(
+		(query, module) => {
+			runSearch(query, module);
+			navigate(`/${APP_ROUTE}`);
+		},
+		[navigate]
+	);
+
 	useEffect(() => {
 		registerComponents({
 			id: 'search-bar',
@@ -29,9 +41,12 @@ export const useIntegrationRegisterer = (): void => {
 			id: 'search-remove-view',
 			fn: removeSearchView
 		});
+	}, []);
+
+	useEffect(() => {
 		registerFunctions({
 			id: 'search-run-search',
-			fn: runSearch
+			fn: runSearchCallback
 		});
-	}, []);
+	}, [runSearchCallback]);
 };

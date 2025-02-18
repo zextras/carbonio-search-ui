@@ -7,10 +7,11 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { DropdownItem } from '@zextras/carbonio-design-system';
 import { Container, Row, Text, Icon, Dropdown } from '@zextras/carbonio-design-system';
-import { pushHistory, useCurrentRoute } from '@zextras/carbonio-shell-ui';
+import { useCurrentRoute } from '@zextras/carbonio-shell-ui';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { APP_ID } from '../constants';
+import { APP_ROUTE } from '../constants';
 import { useSearchModule } from '../hooks/use-search-module';
 import { useAppStore } from '../stores/app-store';
 
@@ -25,6 +26,7 @@ const SelectorContainer = styled(Container)`
 `;
 
 export const ModuleSelector = (): React.JSX.Element | null => {
+	const navigate = useNavigate();
 	const currentRoute = useCurrentRoute();
 	const searchViews = useAppStore((s) => s.views);
 	const { module, setModule: updateModule } = useSearchModule();
@@ -45,12 +47,12 @@ export const ModuleSelector = (): React.JSX.Element | null => {
 					onClick: (): void => {
 						// open the search view and update the module of moduleSelector
 						// order is important
-						pushHistory({ route: APP_ID, path: '' });
+						navigate(`/${APP_ROUTE}`);
 						updateModule(route);
 					}
 				})
 			),
-		[searchViews, updateModule]
+		[navigate, searchViews, updateModule]
 	);
 
 	useEffect(() => {

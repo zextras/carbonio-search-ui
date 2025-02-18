@@ -12,7 +12,7 @@ import { AppView } from './components/app-view';
 import { ResultsHeader } from './components/results-header';
 import { SearchBar } from './components/search-bar';
 import { APP_ID, APP_ROUTE } from './constants';
-import { addSearchView, removeSearchView, runSearch } from './lib';
+import { addSearchView, removeSearchView } from './lib';
 import { setup } from './tests/utils';
 
 describe('App', () => {
@@ -59,7 +59,7 @@ describe('App', () => {
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-run-search',
-			fn: runSearch
+			fn: expect.any(Function)
 		});
 	});
 
