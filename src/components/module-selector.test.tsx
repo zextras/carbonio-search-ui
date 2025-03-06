@@ -8,14 +8,21 @@ import React from 'react';
 
 import { screen } from '@testing-library/react';
 import * as Shell from '@zextras/carbonio-shell-ui';
+import * as reactRouterDom from 'react-router-dom';
 
 import { ModuleSelector } from './module-selector';
-import { APP_ID } from '../constants';
+import { APP_ROUTE } from '../constants';
 import { app1SearchView, app2SearchView } from '../mocks/utils';
 import { useAppStore } from '../stores/app-store';
 import { useSearchStore } from '../stores/search-store';
 import { SELECTORS } from '../tests/constants';
 import { setup, within } from '../tests/utils';
+
+// Mock the react-router-dom module
+jest.mock('react-router-dom', () => ({
+	...jest.requireActual('react-router-dom'),
+	useNavigate: jest.fn()
+}));
 
 describe('Module selector', () => {
 	it('should hide the component if there are no modules in the store', () => {
@@ -70,10 +77,11 @@ describe('Module selector', () => {
 		useAppStore.getState().addSearchView(app1SearchView);
 		useAppStore.getState().addSearchView(app2SearchView);
 		useSearchStore.setState({ module: app1SearchView.route });
-		const pushHistory = jest.spyOn(Shell, 'pushHistory');
+		const navigate = jest.fn();
+		jest.spyOn(reactRouterDom, 'useNavigate').mockReturnValue(navigate);
 		const { user } = setup(<ModuleSelector />);
 		await user.click(screen.getByText(app1SearchView.label));
 		await user.click(screen.getByText(app2SearchView.label));
-		expect(pushHistory).toHaveBeenCalledWith({ route: APP_ID, path: '' });
+		expect(navigate).toHaveBeenCalledWith(`/${APP_ROUTE}`);
 	});
 });

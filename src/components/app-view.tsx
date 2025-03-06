@@ -6,7 +6,8 @@
 
 import React, { useEffect, useMemo } from 'react';
 
-import { AppContextProvider, replaceHistory, useCurrentRoute } from '@zextras/carbonio-shell-ui';
+import { AppContextProvider, useCurrentRoute } from '@zextras/carbonio-shell-ui';
+import { useNavigate } from 'react-router-dom';
 
 import { ResultsHeader } from './results-header';
 import { APP_ROUTE } from '../constants';
@@ -15,6 +16,7 @@ import { useSearchModule } from '../hooks/use-search-module';
 import { useAppStore } from '../stores/app-store';
 
 export const AppView = (): React.JSX.Element => {
+	const navigate = useNavigate();
 	const searchViews = useAppStore((state) => state.views);
 	const { module, lastVisibleModule, updateLastVisibleModule } = useSearchModule();
 
@@ -28,14 +30,11 @@ export const AppView = (): React.JSX.Element => {
 	useEffect(() => {
 		if (currentRoute?.route === APP_ROUTE) {
 			if (module !== lastVisibleModule) {
-				replaceHistory({
-					route: APP_ROUTE,
-					path: ''
-				});
+				navigate(`/${APP_ROUTE}`, { replace: true });
 			}
 			updateLastVisibleModule();
 		}
-	}, [currentRoute?.route, lastVisibleModule, module, updateLastVisibleModule]);
+	}, [currentRoute?.route, lastVisibleModule, module, navigate, updateLastVisibleModule]);
 
 	return (
 		<>

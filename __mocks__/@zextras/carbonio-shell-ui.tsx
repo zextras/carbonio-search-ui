@@ -12,7 +12,6 @@ import { I18NextTestProvider } from '../../src/tests/utils';
 export const addRoute: typeof Shell.addRoute = () => '';
 export const registerComponents: typeof Shell.registerComponents = () => '';
 export const registerFunctions: typeof Shell.registerFunctions = () => '';
-export const pushHistory: typeof Shell.pushHistory = () => {};
 
 const localStorageStore = new Map<string, unknown>();
 export const useLocalStorage = <T,>(

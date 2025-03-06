@@ -8,8 +8,9 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { ChipInputProps, ChipItem } from '@zextras/carbonio-design-system';
 import { Button, ChipInput, Container, Tooltip } from '@zextras/carbonio-design-system';
-import { pushHistory, useLocalStorage } from '@zextras/carbonio-shell-ui';
+import { useCurrentRoute, useLocalStorage } from '@zextras/carbonio-shell-ui';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ModuleSelector } from './module-selector';
@@ -48,6 +49,8 @@ type SearchOption = NonNullable<ChipInputProps<string>['options']>[number] & {
 };
 
 export const SearchBar = (): React.JSX.Element => {
+	const currentRoute = useCurrentRoute();
+	const navigate = useNavigate();
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [t] = useTranslation();
 	const [storedSuggestions, setStoredSuggestions] = useLocalStorage<SearchOption[]>(
@@ -135,12 +138,17 @@ export const SearchBar = (): React.JSX.Element => {
 
 			return getUniqChipsByLabel(currentQuery, searchInputValue);
 		});
-		// TODO: perform a navigation only when coming from a different module (not the search one)
-		pushHistory({
-			route: APP_ROUTE,
-			path: ''
-		});
-	}, [getUniqChipsByLabel, inputTyped, searchInputValue, updateQuery]);
+		if (currentRoute?.route !== APP_ROUTE) {
+			navigate(`/${APP_ROUTE}`);
+		}
+	}, [
+		currentRoute?.route,
+		getUniqChipsByLabel,
+		inputTyped,
+		navigate,
+		searchInputValue,
+		updateQuery
+	]);
 
 	const appSuggestions = useMemo<SearchOption[]>(
 		() =>
