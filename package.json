@@ -58,14 +58,14 @@
 	},
 	"dependencies": {
 		"@zextras/carbonio-design-system": "^9.0.0",
-		"@zextras/carbonio-shell-ui": "file:zextras-carbonio-shell-ui-10.0.0.tgz",
+		"@zextras/carbonio-shell-ui": "devel",
 		"core-js": "^3.39.0",
 		"i18next": "^22.5.1",
 		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-i18next": "^12.3.1",
-		"react-router-dom": "^6.29.0",
+		"react-router-dom": "^6.30.0",
 		"styled-components": "^6.1.13",
 		"zustand": "^5.0.3"
 	},
