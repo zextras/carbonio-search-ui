@@ -36,11 +36,13 @@ const getIconAndColor = (
 export type ResultsHeaderProps = {
 	label: string;
 	labelType?: ValueOf<typeof RESULT_LABEL_TYPE>;
+	onReset?: () => void;
 };
 
 export const ResultsHeader = ({
 	label,
-	labelType = RESULT_LABEL_TYPE.normal
+	labelType = RESULT_LABEL_TYPE.normal,
+	onReset = (): void => {}
 }: ResultsHeaderProps): React.JSX.Element => {
 	const [t] = useTranslation();
 	const [query, updateQuery] = useQuery();
@@ -49,7 +51,8 @@ export const ResultsHeader = ({
 	const resetQuery = useCallback(() => {
 		updateQuery([]);
 		setDisabled(false);
-	}, [updateQuery, setDisabled]);
+		onReset();
+	}, [updateQuery, setDisabled, onReset]);
 
 	const [icon, color] = getIconAndColor(labelType);
 
