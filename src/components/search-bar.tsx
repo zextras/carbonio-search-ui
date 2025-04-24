@@ -89,7 +89,7 @@ export const SearchBar = (): React.JSX.Element => {
 		setIsTyping(false);
 		setSearchInputValue([]);
 		setSearchDisabled(false);
-		updateQuery([]);
+		//updateQuery([]);
 		setInputTyped('');
 	}, [setSearchDisabled, updateQuery]);
 
