@@ -6,6 +6,7 @@
 import React from 'react';
 
 import { act, waitFor } from '@testing-library/react';
+import { Input } from '@zextras/carbonio-design-system';
 import * as Shell from '@zextras/carbonio-shell-ui';
 import { Link } from 'react-router-dom';
 
@@ -16,6 +17,16 @@ import { useAppStore } from '../stores/app-store';
 import { useSearchStore } from '../stores/search-store';
 import { SELECTORS, TIMERS } from '../tests/constants';
 import { screen, setup, within } from '../tests/utils';
+
+const SearchBarWithStoreQuery = (): React.JSX.Element => {
+	const { query } = useSearchStore();
+	return (
+		<>
+			<Input label="query-in-store" defaultValue={query?.[0]?.label} />
+			<SearchBar />
+		</>
+	);
+};
 
 describe('Search bar', () => {
 	describe('Clear search', () => {
@@ -40,6 +51,24 @@ describe('Search bar', () => {
 			expect(inputElement).toHaveValue('');
 			expect(inputElement).toHaveFocus();
 			expect(screen.queryByText(textContent)).not.toBeInTheDocument();
+		});
+
+		it('should not update the query in the store the user clicks the clear button', async () => {
+			const { user } = setup(<SearchBarWithStoreQuery />);
+			const queryInStoreInput = screen.getByRole('textbox', { name: /query-in-store/i });
+			expect(queryInStoreInput).not.toHaveValue();
+
+			const inputElement = screen.getByRole('textbox', { name: /search in/i });
+			await user.type(inputElement, 'test');
+			await user.keyboard('[Enter]');
+
+			await waitFor(() => {
+				expect(queryInStoreInput).toHaveValue('test');
+			});
+			await user.click(screen.getByRoleWithIcon('button', { icon: SELECTORS.icons.clearSearch }));
+			expect(inputElement).toHaveValue('');
+			expect(inputElement).toHaveFocus();
+			expect(queryInStoreInput).toHaveValue('test');
 		});
 	});
 
