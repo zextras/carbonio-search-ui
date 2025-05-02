@@ -89,9 +89,8 @@ export const SearchBar = (): React.JSX.Element => {
 		setIsTyping(false);
 		setSearchInputValue([]);
 		setSearchDisabled(false);
-		updateQuery([]);
 		setInputTyped('');
-	}, [setSearchDisabled, updateQuery]);
+	}, [setSearchDisabled]);
 
 	const getUniqChipsByLabel = useCallback(
 		(currentQuery: QueryChip[], chipsToAdd: QueryChip[]): QueryChip[] => {
