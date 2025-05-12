@@ -303,10 +303,7 @@ export const SearchBar = (): React.JSX.Element => {
 			return t('start', 'Start search');
 		}
 		if (inputHasFocus) {
-			return t(
-				'search.type_or_choose_suggestion',
-				'Type or choose some keywords to start a search'
-			);
+			return t('type_or_choose_suggestion', 'Type or choose some keywords to start a search');
 		}
 		// TODO: I don't know if this branch makes sense. How can it be reached?
 		//    searchInputValue is derived from query, and searchButtonsAreDisabled is true only if searchInputValue is empty,
