@@ -59,7 +59,7 @@
 		"@zextras/carbonio-design-system": "^10.0.0",
 		"@zextras/carbonio-shell-ui": "10.0.0-devel.1744805695533",
 		"core-js": "^3.42.0",
-		"i18next": "^22.5.1",
+		"i18next": "^25.1.2",
 		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
