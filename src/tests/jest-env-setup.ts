@@ -24,3 +24,9 @@ afterAll(() => {});
 afterEach(() => {
 	jest.runOnlyPendingTimers();
 });
+
+// mock a simplified crypto
+Object.defineProperty(window.crypto, 'randomUUID', {
+	writable: true,
+	value: jest.fn(() => Math.random().toString())
+});
