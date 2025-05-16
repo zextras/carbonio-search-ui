@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/zextras/carbonio-search-ui/compare/v0.0.3...v0.0.4) (2025-05-16)
+
+
+### Bug Fixes
+
+* clear only search input on button click ([#66](https://github.com/zextras/carbonio-search-ui/issues/66)) ([40d7719](https://github.com/zextras/carbonio-search-ui/commit/40d7719bf92609f8afb55aa1dec9bad42a055066))
+* update carbonio-shell-ui version ([7813feb](https://github.com/zextras/carbonio-search-ui/commit/7813feb95ae473664ce94ce01325e8598d0e3f8d)), closes [#61](https://github.com/zextras/carbonio-search-ui/issues/61)
+* update wrong key ([26ae819](https://github.com/zextras/carbonio-search-ui/commit/26ae8197a37a1c445c443a742d464e0615857c9c)), closes [#72](https://github.com/zextras/carbonio-search-ui/issues/72)
+
 ### [0.0.3](https://github.com/zextras/carbonio-search-ui/compare/v0.0.2...v0.0.3) (2025-02-18)
 
 ### [0.0.2](https://github.com/zextras/carbonio-search-ui/compare/v0.0.1...v0.0.2) (2025-02-07)
