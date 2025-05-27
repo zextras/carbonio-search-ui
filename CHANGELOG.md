@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/zextras/carbonio-search-ui/compare/v0.0.4...v0.0.5) (2025-05-27)
+
+
+### Bug Fixes
+
+* use "t" from shell ([b3fd3ea](https://github.com/zextras/carbonio-search-ui/commit/b3fd3eab728c03edea304e9f16e274ff25c011a3))
+
 ### [0.0.4](https://github.com/zextras/carbonio-search-ui/compare/v0.0.3...v0.0.4) (2025-05-16)
 
 
