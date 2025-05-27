@@ -11,6 +11,10 @@ import { useSearchStore } from '../stores/search-store';
 import { SELECTORS } from '../tests/constants';
 import { screen, setup } from '../tests/utils';
 
+jest.mock('@zextras/carbonio-shell-ui', () => ({
+	t: (key: string, defaultValue: string): string => defaultValue
+}));
+
 describe('Results Header', () => {
 	it('should show the label', () => {
 		setup(<ResultsHeader label={'Test'} />);

@@ -15,7 +15,7 @@ import {
 	Padding,
 	Text
 } from '@zextras/carbonio-design-system';
-import { useTranslation } from 'react-i18next';
+import { t } from '@zextras/carbonio-shell-ui';
 
 import { RESULT_LABEL_TYPE } from '../constants';
 import { useDisableSearch, useQuery } from '../hooks/hooks';
@@ -42,7 +42,6 @@ export const ResultsHeader = ({
 	label,
 	labelType = RESULT_LABEL_TYPE.normal
 }: ResultsHeaderProps): React.JSX.Element => {
-	const [t] = useTranslation();
 	const [query, updateQuery] = useQuery();
 	const [, setDisabled] = useDisableSearch();
 
