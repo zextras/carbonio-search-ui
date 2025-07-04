@@ -20,7 +20,7 @@ import { useAppStore } from '../stores/app-store';
 import { useSearchStore } from '../stores/search-store';
 import type { QueryChip } from '../stores/search-store';
 
-const StyledChipInput = styled(ChipInput<string>)`
+const StyledChipInput = styled(ChipInput<string | boolean>)`
 	cursor: pointer;
 	overflow-x: hidden;
 	padding: 0 1rem;
@@ -39,8 +39,8 @@ const StyledContainer = styled(Container)`
 	}
 `;
 
-type SearchChipInputProps<K extends keyof ChipInputProps<string>> = NonNullable<
-	ChipInputProps<string>[K]
+type SearchChipInputProps<K extends keyof ChipInputProps<string | boolean>> = NonNullable<
+	ChipInputProps<string | boolean>[K]
 >;
 type SearchOption = NonNullable<ChipInputProps<string>['options']>[number] & {
 	/** The route of the app which the suggestion belongs to */

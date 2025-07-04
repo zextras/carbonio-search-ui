@@ -6,7 +6,7 @@
 import type { ChipItem } from '@zextras/carbonio-design-system';
 import { create } from 'zustand';
 
-export type QueryChip = ChipItem<string> & { app?: string };
+export type QueryChip = ChipItem<string | boolean> & { app?: string };
 
 export type SearchState = {
 	query: QueryChip[];
