@@ -13,6 +13,6 @@ module.exports = (api) => {
 			};
 	return {
 		presets: [['@babel/preset-env', presetEnv], '@babel/preset-react', '@babel/preset-typescript'],
-		plugins: ['babel-plugin-styled-components']
+		plugins: ['@emotion']
 	};
 };

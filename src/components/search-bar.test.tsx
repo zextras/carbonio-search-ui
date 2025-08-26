@@ -22,7 +22,7 @@ const SearchBarWithStoreQuery = (): React.JSX.Element => {
 	const { query } = useSearchStore();
 	return (
 		<>
-			<Input label="query-in-store" defaultValue={query?.[0]?.label ?? ''} />
+			<Input label="query-in-store" value={query?.[0]?.label ?? ''} onChange={() => {}} />
 			<SearchBar />
 		</>
 	);
