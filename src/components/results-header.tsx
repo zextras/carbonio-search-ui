@@ -15,9 +15,10 @@ import {
 	Padding,
 	Text
 } from '@zextras/carbonio-design-system';
-import { t } from '@zextras/carbonio-shell-ui';
+import { AppContextProvider } from '@zextras/carbonio-shell-ui';
+import { useTranslation } from 'react-i18next';
 
-import { RESULT_LABEL_TYPE } from '../constants';
+import { APP_ID, RESULT_LABEL_TYPE } from '../constants';
 import { useDisableSearch, useQuery } from '../hooks/hooks';
 import type { ValueOf } from '../types/utils';
 
@@ -38,10 +39,11 @@ export type ResultsHeaderProps = {
 	labelType?: ValueOf<typeof RESULT_LABEL_TYPE>;
 };
 
-export const ResultsHeader = ({
+const ResultsHeaderBase = ({
 	label,
 	labelType = RESULT_LABEL_TYPE.normal
 }: ResultsHeaderProps): React.JSX.Element => {
+	const [t] = useTranslation();
 	const [query, updateQuery] = useQuery();
 	const [, setDisabled] = useDisableSearch();
 
@@ -101,3 +103,9 @@ export const ResultsHeader = ({
 		</>
 	);
 };
+
+export const ResultsHeader = ({ ...props }: ResultsHeaderProps): React.JSX.Element => (
+	<AppContextProvider pkg={APP_ID}>
+		<ResultsHeaderBase {...props} />
+	</AppContextProvider>
+);
