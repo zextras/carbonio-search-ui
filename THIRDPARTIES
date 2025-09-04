@@ -1,25 +1,24 @@
 MIT License (MIT) applies to:
 
 @babel/core, Copyright (c) 2014-present Sebastian McKenzie and other contributors
-@babel/plugin-transform-runtime, Copyright (c) 2014-present Sebastian McKenzie and other contributors
 @babel/preset-env, Copyright (c) 2014-present Sebastian McKenzie and other contributors
 @babel/preset-react, Copyright (c) 2014-present Sebastian McKenzie and other contributors
 @babel/preset-typescript, Copyright (c) 2014-present Sebastian McKenzie and other contributors
 @commitlint/cli, Copyright (c) 2016 - present Mario Nebl
 @commitlint/config-conventional, Copyright (c) 2016 - present Mario Nebl
+@emotion/babel-plugin, Copyright (c) Emotion team and other contributors
+@emotion/jest, Copyright (c) Emotion team and other contributors
+@emotion/react, Copyright (c) Emotion team and other contributors
+@emotion/styled, Copyright (c) Emotion team and other contributors
 @testing-library/dom, Copyright (c) 2017 Kent C. Dodds
 @testing-library/jest-dom, Copyright (c) 2017 Kent C. Dodds
 @testing-library/react, Copyright (c) 2017 Kent C. Dodds
 @testing-library/user-event, Copyright (c) 2020 Giorgio Polvara
-@types/history, Copyright (c) Microsoft Corporation
 @types/jest, Copyright (c) Microsoft Corporation
 @types/react-dom, Copyright (c) Microsoft Corporation
-@types/react-router-dom, Copyright (c) Microsoft Corporation
 @types/react, Copyright (c) Microsoft Corporation
-@types/styled-components, Copyright (c) Microsoft Corporation
 babel-jest, Copyright (c) Meta Platforms, Inc. and affiliates.
-babel-plugin-styled-components, Copyright (c) 2016-present Vladimir Danchenkov and Maximilian Stoiber
-core-js, Copyright (c) 2014-2024 Denis Pushkarev
+core-js, Copyright (c) 2014-2025 Denis Pushkarev
 eslint-plugin-notice, Copyright (c) 2017 Nick Deis
 husky, Copyright (c) 2021 typicode
 i18next, Copyright (c) 2022 i18next
@@ -30,9 +29,8 @@ jest-fail-on-console, Copyright (c) 2022 Valentin Hervieu
 jest, Copyright (c) Meta Platforms, Inc. and affiliates.
 react-dom, Copyright (c) Facebook, Inc. and its affiliates.
 react-i18next, Copyright (c) 2023 i18next
-react-router-dom, Copyright (c) React Training 2015-2019. Copyright (c) Remix Software 2020-2022
+react-router-dom, Copyright (c) React Training LLC 2015-2019. Copyright (c) Remix Software Inc. 2020-2021. Copyright (c) Shopify Inc. 2022-2023
 react, Copyright (c) Facebook, Inc. and its affiliates.
-styled-components, Copyright © 2016-present Glen Maddern and Maximilian Stoiber
 ts-node, Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)
 zustand, Copyright (c) 2019 Paul Henschel
 
@@ -40,11 +38,20 @@ MIT License
 
 Copyright (c) <year> <copyright holders>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 

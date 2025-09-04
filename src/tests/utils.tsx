@@ -6,7 +6,9 @@
 
 import React, { type ReactElement, useMemo } from 'react';
 
+import { matchers } from '@emotion/jest';
 import { render, type RenderOptions, type RenderResult, within } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ModalManager, SnackbarManager, ThemeProvider } from '@zextras/carbonio-design-system';
 import i18next, { type i18n } from 'i18next';
@@ -21,11 +23,13 @@ export type UserEvent = ReturnType<(typeof userEvent)['setup']> & {
 	readonly rightClick: (target: Element) => Promise<void>;
 };
 
+expect.extend(matchers);
+
 const customWithin = (
 	element: Parameters<typeof within<ExtendedQueries>>[0]
 ): ReturnType<typeof within<ExtendedQueries>> => within(element, extendedQueries);
 
-export const customScreen = customWithin(document.body);
+export const customScreen = { ...screen, ...customWithin(document.body) };
 
 export { customWithin as within, customScreen as screen };
 

@@ -5,11 +5,11 @@
  */
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
+import styled from '@emotion/styled';
 import type { DropdownItem } from '@zextras/carbonio-design-system';
 import { Container, Row, Text, Icon, Dropdown } from '@zextras/carbonio-design-system';
 import { useCurrentRoute } from '@zextras/carbonio-shell-ui';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
 import { APP_ROUTE } from '../constants';
 import { useSearchModule } from '../hooks/use-search-module';
