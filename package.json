@@ -45,7 +45,6 @@
 		"@types/react-dom": "^18.3.1",
 		"@zextras/carbonio-ui-configs": "^2.1.0",
 		"@zextras/carbonio-ui-sdk": "^2.2.0-devel.1",
-		"babel-jest": "^30.2.0",
 		"dotenv": "^16.5.0",
 		"eslint-plugin-notice": "^1.0.0",
 		"husky": "^9.1.7",
