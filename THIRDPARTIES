@@ -17,7 +17,6 @@ MIT License (MIT) applies to:
 @types/jest, Copyright (c) Microsoft Corporation
 @types/react-dom, Copyright (c) Microsoft Corporation
 @types/react, Copyright (c) Microsoft Corporation
-babel-jest, Copyright (c) Meta Platforms, Inc. and affiliates.
 core-js, Copyright (c) 2014-2025 Denis Pushkarev
 eslint-plugin-notice, Copyright (c) 2017 Nick Deis
 husky, Copyright (c) 2021 typicode
