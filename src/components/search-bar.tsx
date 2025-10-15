@@ -34,9 +34,6 @@ const StyledChipInput = styled(ChipInput<string>)`
 const StyledContainer = styled(Container)`
 	height: 2.625rem;
 	overflow-y: hidden;
-	&:first-child {
-		transform: translateY(-0.125rem);
-	}
 `;
 
 type SearchChipInputProps<K extends keyof ChipInputProps<string>> = NonNullable<
