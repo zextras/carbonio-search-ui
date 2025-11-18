@@ -6,12 +6,12 @@
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import styled from '@emotion/styled';
 import type { ChipInputProps, ChipItem } from '@zextras/carbonio-design-system';
 import { Button, ChipInput, Container, Tooltip } from '@zextras/carbonio-design-system';
 import { useCurrentRoute, useLocalStorage } from '@zextras/carbonio-shell-ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
 import { ModuleSelector } from './module-selector';
 import { APP_ROUTE, LOCAL_STORAGE_SEARCH_KEY } from '../constants';
@@ -34,9 +34,6 @@ const StyledChipInput = styled(ChipInput<string>)`
 const StyledContainer = styled(Container)`
 	height: 2.625rem;
 	overflow-y: hidden;
-	&:first-child {
-		transform: translateY(-0.125rem);
-	}
 `;
 
 type SearchChipInputProps<K extends keyof ChipInputProps<string>> = NonNullable<

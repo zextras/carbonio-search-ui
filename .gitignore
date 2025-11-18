@@ -13,5 +13,4 @@
 .env
 /lib
 *.tgz
-/LICENSES
 .tool-versions
