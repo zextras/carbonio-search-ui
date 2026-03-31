@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/zextras/carbonio-search-ui/compare/v0.0.6...v0.0.7) (2026-03-31)
+
+
+### Bug Fixes
+
+* add sonarqube-scanner dependency to resolve CI permission issue ([8f38bbf](https://github.com/zextras/carbonio-search-ui/commit/8f38bbfc5d335f01ed666b642cf4e8a8a210d4da)), closes [#134](https://github.com/zextras/carbonio-search-ui/issues/134)
+* **deps:** update dependency core-js to ^3.49.0 ([#154](https://github.com/zextras/carbonio-search-ui/issues/154)) ([c639cb3](https://github.com/zextras/carbonio-search-ui/commit/c639cb37bb86580e17a1cd65c733f9813bbace9a))
+* **deps:** update dependency immer to ^10.2.0 ([#155](https://github.com/zextras/carbonio-search-ui/issues/155)) ([c3a3ee0](https://github.com/zextras/carbonio-search-ui/commit/c3a3ee0f51085529655ec70f8f743c99176e17a2))
+* **deps:** upgrade node to v22 ([#130](https://github.com/zextras/carbonio-search-ui/issues/130)) ([caf6938](https://github.com/zextras/carbonio-search-ui/commit/caf6938ade75f694e687c45c777a12ae51a5fa4c))
+
 ### [0.0.6](https://github.com/zextras/carbonio-search-ui/compare/v0.0.5...v0.0.6) (2025-11-18)
 
 ### [0.0.5](https://github.com/zextras/carbonio-search-ui/compare/v0.0.4...v0.0.5) (2025-05-27)
