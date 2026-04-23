@@ -14,11 +14,6 @@ export default defineConfig({
 			}
 		})
 	],
-	oxc: {
-		jsx: {
-			runtime: 'automatic'
-		}
-	},
 	test: {
 		globals: true,
 		environment: 'jsdom',
