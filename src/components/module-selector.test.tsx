@@ -19,9 +19,9 @@ import { SELECTORS } from '../tests/constants';
 import { setup, within } from '../tests/utils';
 
 // Mock the react-router-dom module
-jest.mock('react-router-dom', () => ({
-	...jest.requireActual('react-router-dom'),
-	useNavigate: jest.fn()
+vi.mock('react-router-dom', async () => ({
+	...(await vi.importActual('react-router-dom')),
+	useNavigate: vi.fn()
 }));
 
 describe('Module selector', () => {
@@ -33,7 +33,7 @@ describe('Module selector', () => {
 	it('should show the module matching the route', () => {
 		useAppStore.getState().addSearchView(app1SearchView);
 		useAppStore.getState().addSearchView(app2SearchView);
-		const useCurrentRouteMock = jest.spyOn(Shell, 'useCurrentRoute');
+		const useCurrentRouteMock = vi.spyOn(Shell, 'useCurrentRoute');
 		useCurrentRouteMock.mockReturnValue({
 			id: app1SearchView.id,
 			route: app1SearchView.route,
@@ -77,8 +77,8 @@ describe('Module selector', () => {
 		useAppStore.getState().addSearchView(app1SearchView);
 		useAppStore.getState().addSearchView(app2SearchView);
 		useSearchStore.setState({ module: app1SearchView.route });
-		const navigate = jest.fn();
-		jest.spyOn(reactRouterDom, 'useNavigate').mockReturnValue(navigate);
+		const navigate = vi.fn();
+		vi.spyOn(reactRouterDom, 'useNavigate').mockReturnValue(navigate);
 		const { user } = setup(<ModuleSelector />);
 		await user.click(screen.getByText(app1SearchView.label));
 		await user.click(screen.getByText(app2SearchView.label));

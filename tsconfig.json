@@ -1,7 +1,7 @@
 {
-  "extends": "@zextras/carbonio-ui-configs/rules/tsconfig.type-check.json",
-  "include": [
-    "**/*",
-    ".eslintrc.js"
-  ]
+	"extends": "@zextras/carbonio-ui-configs/rules/tsconfig.type-check.json",
+	"compilerOptions": {
+		"types": ["vitest/globals"]
+	},
+	"include": ["**/*", ".eslintrc.js"]
 }
