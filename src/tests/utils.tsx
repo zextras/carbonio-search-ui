@@ -6,7 +6,6 @@
 
 import React, { type ReactElement, useMemo } from 'react';
 
-import { matchers } from '@emotion/jest';
 import { render, type RenderOptions, type RenderResult, within } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -22,8 +21,6 @@ import { APP_ID } from '../constants';
 export type UserEvent = ReturnType<(typeof userEvent)['setup']> & {
 	readonly rightClick: (target: Element) => Promise<void>;
 };
-
-expect.extend(matchers);
 
 const customWithin = (
 	element: Parameters<typeof within<ExtendedQueries>>[0]
@@ -132,7 +129,7 @@ export const setup = (
 	ui: ReactElement,
 	options?: SetupOptions
 ): { user: UserEvent } & ReturnType<typeof customRender> => ({
-	user: setupUserEvent({ advanceTimers: jest.advanceTimersByTime, ...options?.setupOptions }),
+	user: setupUserEvent({ advanceTimers: vi.advanceTimersByTime, ...options?.setupOptions }),
 	...customRender(ui, {
 		initialRouterEntries: options?.initialRouterEntries,
 		...options?.renderOptions

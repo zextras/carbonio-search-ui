@@ -88,11 +88,11 @@ describe('Search bar', () => {
 			await user.type(screen.getByRole('textbox', { name: /search in/i }), 'test');
 			const searchButton = screen.getByRoleWithIcon('button', { icon: SELECTORS.icons.search });
 			await waitFor(() => expect(searchButton).toBeEnabled());
-			jest.advanceTimersToNextTimer();
+			vi.advanceTimersToNextTimer();
 			await user.hover(searchButton);
 			act(() => {
 				// run timers of tooltip
-				jest.advanceTimersToNextTimer();
+				vi.advanceTimersToNextTimer();
 			});
 			expect(
 				await screen.findByText(/Type or choose some keywords to start a search/i)
@@ -112,12 +112,12 @@ describe('Search bar', () => {
 				const searchButton = screen.getByRoleWithIcon('button', { icon: SELECTORS.icons.search });
 				expect(searchButton).toBeEnabled();
 				await act(async () => {
-					await jest.advanceTimersToNextTimerAsync();
+					await vi.advanceTimersToNextTimerAsync();
 				});
 				await user.hover(searchButton);
 				await act(async () => {
 					// run timers of tooltip
-					await jest.advanceTimersToNextTimerAsync();
+					await vi.advanceTimersToNextTimerAsync();
 				});
 				expect(await screen.findByText(/Start search/i)).toBeVisible();
 			}
@@ -133,13 +133,13 @@ describe('Search bar', () => {
 			await user.click(searchButton);
 			await act(async () => {
 				// run tooltip timer
-				await jest.advanceTimersByTimeAsync(TIMERS.tooltip);
+				await vi.advanceTimersByTimeAsync(TIMERS.tooltip);
 			});
 			await user.type(inputElement, 'test2');
 			await user.click(searchButton);
 			await act(async () => {
 				// run tooltip timers
-				await jest.advanceTimersByTimeAsync(TIMERS.tooltip);
+				await vi.advanceTimersByTimeAsync(TIMERS.tooltip);
 			});
 			expect(screen.getByText(chip1)).toBeVisible();
 			expect(screen.getByText(chip2)).toBeVisible();
@@ -180,7 +180,7 @@ describe('Search bar', () => {
 
 	describe('Dropdown suggestions', () => {
 		it('should render the last 5 words of the suggestion array when the user clicks on the input element', async () => {
-			const mockUseLocalStorage = jest.spyOn(Shell, 'useLocalStorage');
+			const mockUseLocalStorage = vi.spyOn(Shell, 'useLocalStorage');
 			useSearchStore.setState({
 				module: app1SearchView.route
 			});
@@ -237,7 +237,7 @@ describe('Search bar', () => {
 						id: 'release'
 					}
 				],
-				jest.fn()
+				vi.fn()
 			]);
 			const { user } = setup(<SearchBar />);
 			await user.click(screen.getByRole('textbox', { name: `Search in ${app1SearchView.label}` }));
@@ -251,7 +251,7 @@ describe('Search bar', () => {
 		});
 
 		it('should render the suggestions when the user starts typing in the input element', async () => {
-			const mockUseLocalStorage = jest.spyOn(Shell, 'useLocalStorage');
+			const mockUseLocalStorage = vi.spyOn(Shell, 'useLocalStorage');
 			useSearchStore.setState({
 				module: app1SearchView.route
 			});
@@ -287,7 +287,7 @@ describe('Search bar', () => {
 						id: 'release'
 					}
 				],
-				jest.fn()
+				vi.fn()
 			]);
 			const { user } = setup(<SearchBar />);
 			await user.type(
@@ -302,7 +302,7 @@ describe('Search bar', () => {
 		});
 
 		it('should create chip when the user clicks on the dropdown suggestion', async () => {
-			const mockUseLocalStorage = jest.spyOn(Shell, 'useLocalStorage');
+			const mockUseLocalStorage = vi.spyOn(Shell, 'useLocalStorage');
 			useSearchStore.setState({
 				module: app1SearchView.route
 			});
@@ -317,7 +317,7 @@ describe('Search bar', () => {
 						id: 'test'
 					}
 				],
-				jest.fn()
+				vi.fn()
 			]);
 			const { user } = setup(<SearchBar />);
 			await user.type(
@@ -332,7 +332,7 @@ describe('Search bar', () => {
 		});
 
 		it('should not show the suggestions which label match an already existing chip', async () => {
-			const mockUseLocalStorage = jest.spyOn(Shell, 'useLocalStorage');
+			const mockUseLocalStorage = vi.spyOn(Shell, 'useLocalStorage');
 			useSearchStore.setState({
 				module: app1SearchView.route
 			});
@@ -361,7 +361,7 @@ describe('Search bar', () => {
 						id: 'test3'
 					}
 				],
-				jest.fn()
+				vi.fn()
 			]);
 			useSearchStore.setState({ query: [{ id: 'chip1', label: 'chip 2 label', value: 'test2' }] });
 			const { user } = setup(<SearchBar />);
@@ -377,20 +377,18 @@ describe('Search bar', () => {
 
 		it('should store a new suggestion when a new chip is created', async () => {
 			const localStorageStore: Record<string, unknown> = {};
-			jest
-				.spyOn(Shell, 'useLocalStorage')
-				.mockImplementation(
-					<T,>(key: string, initialValue: T): ReturnType<typeof Shell.useLocalStorage<T>> => {
-						const updateValue = (value: T | ((prev: T) => void)): void => {
-							if (value instanceof Function) {
-								localStorageStore[key] = value((localStorageStore[key] as T) ?? initialValue);
-							} else {
-								localStorageStore[key] = value;
-							}
-						};
-						return [(localStorageStore[key] as T) ?? initialValue, updateValue];
-					}
-				);
+			vi.spyOn(Shell, 'useLocalStorage').mockImplementation(
+				<T,>(key: string, initialValue: T): ReturnType<typeof Shell.useLocalStorage<T>> => {
+					const updateValue = (value: T | ((prev: T) => void)): void => {
+						if (value instanceof Function) {
+							localStorageStore[key] = value((localStorageStore[key] as T) ?? initialValue);
+						} else {
+							localStorageStore[key] = value;
+						}
+					};
+					return [(localStorageStore[key] as T) ?? initialValue, updateValue];
+				}
+			);
 
 			useAppStore.getState().addSearchView(app1SearchView);
 			useSearchStore.setState({
@@ -411,7 +409,7 @@ describe('Search bar', () => {
 			});
 			await act(async () => {
 				// run dropdown update
-				await jest.advanceTimersToNextTimerAsync();
+				await vi.advanceTimersToNextTimerAsync();
 			});
 		});
 	});

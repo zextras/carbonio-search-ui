@@ -17,7 +17,7 @@ import { setup } from './tests/utils';
 
 describe('App', () => {
 	it('should register search route', () => {
-		const addRouteFn = jest.spyOn(Shell, 'addRoute');
+		const addRouteFn = vi.spyOn(Shell, 'addRoute');
 		setup(<App />);
 		expect(addRouteFn).toHaveBeenCalledWith(
 			expect.objectContaining<Parameters<typeof Shell.addRoute>[0]>({
@@ -37,7 +37,7 @@ describe('App', () => {
 	});
 
 	it('should register SearchBar component integration', () => {
-		const registerComponentsFn = jest.spyOn(Shell, 'registerComponents');
+		const registerComponentsFn = vi.spyOn(Shell, 'registerComponents');
 		setup(<App />);
 		expect(registerComponentsFn).toHaveBeenCalledWith({
 			id: 'search-bar',
@@ -46,7 +46,7 @@ describe('App', () => {
 	});
 
 	it('should register ResultsHeader component integration', () => {
-		const registerComponentsFn = jest.spyOn(Shell, 'registerComponents');
+		const registerComponentsFn = vi.spyOn(Shell, 'registerComponents');
 		setup(<App />);
 		expect(registerComponentsFn).toHaveBeenCalledWith({
 			id: 'search-results-header',
@@ -55,7 +55,7 @@ describe('App', () => {
 	});
 
 	it('should register runSearch function integration', () => {
-		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		const registerFunctionsFn = vi.spyOn(Shell, 'registerFunctions');
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-run-search',
@@ -64,7 +64,7 @@ describe('App', () => {
 	});
 
 	it('should register addSearchView function integration', () => {
-		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		const registerFunctionsFn = vi.spyOn(Shell, 'registerFunctions');
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-add-view',
@@ -73,7 +73,7 @@ describe('App', () => {
 	});
 
 	it('should register removeSearchView function integration', () => {
-		const registerFunctionsFn = jest.spyOn(Shell, 'registerFunctions');
+		const registerFunctionsFn = vi.spyOn(Shell, 'registerFunctions');
 		setup(<App />);
 		expect(registerFunctionsFn).toHaveBeenCalledWith({
 			id: 'search-remove-view',
