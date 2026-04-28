@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/zextras/carbonio-search-ui/compare/v0.0.7...v0.0.8) (2026-04-28)
+
+### Other changes
+
+* migrate from npm to pnpm ([1ab3d3b](https://github.com/zextras/carbonio-search-ui/commit/1ab3d3b2af5358dd98ce4574c3689cf65730417a))
+* **release:** migrate to semantic-release ([#168](https://github.com/zextras/carbonio-search-ui/issues/168)) ([94dcfa6](https://github.com/zextras/carbonio-search-ui/commit/94dcfa6ca3facc6f042e04db8dd52f42f65bea45))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
