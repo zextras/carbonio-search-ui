@@ -1,3 +1,9 @@
+## [0.0.9](https://github.com/zextras/carbonio-search-ui/compare/v0.0.8...v0.0.9) (2026-04-30)
+
+### Bug Fixes
+
+* **deps:** update dependency @zextras/carbonio-design-system to v12.0.3 ([#169](https://github.com/zextras/carbonio-search-ui/issues/169)) ([ac8336f](https://github.com/zextras/carbonio-search-ui/commit/ac8336fdc44201c94dac7700b563d84438bd1e93))
+
 ## [0.0.8](https://github.com/zextras/carbonio-search-ui/compare/v0.0.7...v0.0.8) (2026-04-28)
 
 ### Other changes
