@@ -1,3 +1,9 @@
+## [0.0.10](https://github.com/zextras/carbonio-search-ui/compare/v0.0.9...v0.0.10) (2026-05-12)
+
+### Other changes
+
+* **release:** update jenkins-lib-ui to 1.0.13 ([7a849b4](https://github.com/zextras/carbonio-search-ui/commit/7a849b4a6e5287b197580e5dd74e7360918a0509))
+
 ## [0.0.9](https://github.com/zextras/carbonio-search-ui/compare/v0.0.8...v0.0.9) (2026-04-30)
 
 ### Bug Fixes
