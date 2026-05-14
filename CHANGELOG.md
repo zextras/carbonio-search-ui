@@ -1,3 +1,9 @@
+## [0.0.11](https://github.com/zextras/carbonio-search-ui/compare/v0.0.10...v0.0.11) (2026-05-14)
+
+### Bug Fixes
+
+* **ci:** migrate Jenkinsfile to jenkins-lib-common ([#177](https://github.com/zextras/carbonio-search-ui/issues/177)) ([3f3e2b7](https://github.com/zextras/carbonio-search-ui/commit/3f3e2b7b3a19c965e003117f76a71bcb01e811a2))
+
 ## [0.0.10](https://github.com/zextras/carbonio-search-ui/compare/v0.0.9...v0.0.10) (2026-05-12)
 
 ### Other changes
