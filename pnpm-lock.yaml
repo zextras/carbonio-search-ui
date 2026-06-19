@@ -142,8 +142,8 @@ importers:
         specifier: 25.0.5
         version: 25.0.5(typescript@5.9.3)
       sonarqube-scanner:
-        specifier: 4.3.6
-        version: 4.3.6
+        specifier: 4.3.8
+        version: 4.3.8
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2248,6 +2248,10 @@ packages:
     resolution: {integrity: sha512-+Ut8d9LLqwEvHHJl1+PIHqoyDxFgVN847JTVM3Izi3xHDWPE4UtzzXysMZQs64DMcrJfBeS/uoEP4AD3HQHnQQ==}
     engines: {node: '>=12.0'}
 
+  agent-base@6.0.2:
+    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
+    engines: {node: '>= 6.0.0'}
+
   agent-base@9.0.0:
     resolution: {integrity: sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==}
     engines: {node: '>= 20'}
@@ -2421,8 +2425,8 @@ packages:
     resolution: {integrity: sha512-FTavr/7Ba0IptwGOPxnQvdyW2tAsdLBMTBXz7rKH6xJ2skpyxpBxyHkDdBs4lf69yRqYpkqCdfhnwS8YULGOmg==}
     engines: {node: '>=4'}
 
-  axios@1.15.0:
-    resolution: {integrity: sha512-wWyJDlAatxk30ZJer+GeCWS209sA42X+N5jU2jy6oHTp7ufw8uzUTVFBX9+wTfAlhiJXGS0Bq7X6efruWjuK9Q==}
+  axios@1.17.0:
+    resolution: {integrity: sha512-J8SwNxprqqpbfenehxWYXE7CW+wM1BB4w3+N+g+/Wx40xM4rsLrfPmHHxSWIxJLYDgSY/HqlFPIYb2/S3rxafw==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -3857,6 +3861,10 @@ packages:
     resolution: {integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==}
     engines: {node: '>=8.0.0'}
 
+  https-proxy-agent@5.0.1:
+    resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
+    engines: {node: '>= 6'}
+
   https-proxy-agent@9.0.0:
     resolution: {integrity: sha512-/MVmHp58WkOypgFhCLk4fzpPcFQvTJ/e6LBI7irpIO2HfxUbpmYoHF+KzipzJpxxzJu7aJNWQ0xojJ/dzV2G5g==}
     engines: {node: '>= 20'}
@@ -5149,8 +5157,9 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
-  properties-file@4.0.0:
-    resolution: {integrity: sha512-VWnuWVVQIeYPdJwWfBVu6/SQExpAliGkY8Bq58pHHPJHgD4THXlJfsc+qC41+62iV4WNwQhmrxbqpEXIvIMOmw==}
+  properties-file@5.0.5:
+    resolution: {integrity: sha512-Gfi6UgMENAzww1P4hloKhLIQxqcYmUS5z+Lhm/jmFV+ushbE416NalT42oEfJbF9vd0a02B3AaLHiQGmNSQ9EA==}
+    engines: {node: '>=0.4.0'}
 
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
@@ -5476,6 +5485,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.4:
+    resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   send@0.19.2:
     resolution: {integrity: sha512-VMbMxbDeehAxpOtWJXlcUS5E8iXh6QmN+BkRX1GARS3wRaXEEgzCcB10gTQazO42tpNIya8xIyNx8fll1OFPrg==}
     engines: {node: '>= 0.8.0'}
@@ -5567,8 +5581,8 @@ packages:
   sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
 
-  sonarqube-scanner@4.3.6:
-    resolution: {integrity: sha512-gRtTf11UXl5SqXrRKzXagdRh06v8n2qXAypEhmlTOFCdAUlR4TboPzYClMFFT7NCZq5jKZSyN2mk5jj01RgVVQ==}
+  sonarqube-scanner@4.3.8:
+    resolution: {integrity: sha512-mkxxVmUJB5ammq4y8RJSWuW79MdV0tW5Bpi/rzi7hytu1ahyQwFdSoBlAoH1UsLSvfd1iM5R+5sjZbWlaOhGhA==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -5781,8 +5795,8 @@ packages:
     resolution: {integrity: sha512-uxc/zpqFg6x7C8vOE7lh6Lbda8eEL9zmVm/PLeTPBRhh1xCgdWaQ+J1CUieGpIfm2HdtsUpRv+HshiasBMcc6A==}
     engines: {node: '>=6'}
 
-  tar-stream@3.1.8:
-    resolution: {integrity: sha512-U6QpVRyCGHva435KoNWy9PRoi2IFYCgtEhq9nmrPPpbRacPs9IH4aJ3gbrFC8dPcXvdSZ4XXfXT5Fshbp2MtlQ==}
+  tar-stream@3.2.0:
+    resolution: {integrity: sha512-ojzvCvVaNp6aOTFmG7jaRD0meowIAuPc3cMMhSgKiVWws1GyHbGd/xvnyuRKcKlMpt3qvxx6r0hreCNITP9hIg==}
 
   teex@1.0.1:
     resolution: {integrity: sha512-eYE6iEI62Ni1H8oIa7KlDU6uQBtqr4Eajni3wX7rpfXD8ysFx8z0+dri+KWEPWpBsxXfxu58x/0jvTVT1ekOSg==}
@@ -9044,6 +9058,12 @@ snapshots:
 
   adm-zip@0.5.17: {}
 
+  agent-base@6.0.2:
+    dependencies:
+      debug: 4.4.3
+    transitivePeerDependencies:
+      - supports-color
+
   agent-base@9.0.0: {}
 
   aggregate-error@3.1.0:
@@ -9238,13 +9258,15 @@ snapshots:
 
   axe-core@4.12.0: {}
 
-  axios@1.15.0:
+  axios@1.17.0:
     dependencies:
       follow-redirects: 1.16.0
       form-data: 4.0.5
+      https-proxy-agent: 5.0.1
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
+      - supports-color
 
   axobject-query@4.1.0: {}
 
@@ -9706,7 +9728,7 @@ snapshots:
       postcss-modules-scope: 3.2.1(postcss@8.5.10)
       postcss-modules-values: 4.0.0(postcss@8.5.10)
       postcss-value-parser: 4.2.0
-      semver: 7.7.4
+      semver: 7.8.2
     optionalDependencies:
       webpack: 5.105.4(postcss@8.5.10)
 
@@ -10874,6 +10896,13 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
+  https-proxy-agent@5.0.1:
+    dependencies:
+      agent-base: 6.0.2
+      debug: 4.4.3
+    transitivePeerDependencies:
+      - supports-color
+
   https-proxy-agent@9.0.0:
     dependencies:
       agent-base: 9.0.0
@@ -11916,7 +11945,7 @@ snapshots:
       cosmiconfig: 9.0.2(typescript@5.9.3)
       jiti: 2.7.0
       postcss: 8.5.10
-      semver: 7.7.4
+      semver: 7.8.2
     optionalDependencies:
       webpack: 5.105.4(postcss@8.5.10)
     transitivePeerDependencies:
@@ -12035,7 +12064,7 @@ snapshots:
       object-assign: 4.1.1
       react-is: 16.13.1
 
-  properties-file@4.0.0: {}
+  properties-file@5.0.5: {}
 
   proto-list@1.2.4: {}
 
@@ -12424,6 +12453,8 @@ snapshots:
 
   semver@7.8.2: {}
 
+  semver@7.8.4: {}
+
   send@0.19.2:
     dependencies:
       debug: 2.6.9
@@ -12559,23 +12590,24 @@ snapshots:
       uuid: 8.3.2
       websocket-driver: 0.7.5
 
-  sonarqube-scanner@4.3.6:
+  sonarqube-scanner@4.3.8:
     dependencies:
       adm-zip: 0.5.17
-      axios: 1.15.0
+      axios: 1.17.0
       commander: 14.0.3
       hpagent: 1.2.0
       node-forge: 1.4.0
-      properties-file: 4.0.0
+      properties-file: 5.0.5
       proxy-from-env: 2.1.0
-      semver: 7.7.4
+      semver: 7.8.4
       slugify: 1.6.9
-      tar-stream: 3.1.8
+      tar-stream: 3.2.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
       - debug
       - react-native-b4a
+      - supports-color
 
   source-map-js@1.2.1: {}
 
@@ -12820,7 +12852,7 @@ snapshots:
 
   tapable@2.3.3: {}
 
-  tar-stream@3.1.8:
+  tar-stream@3.2.0:
     dependencies:
       b4a: 1.8.1
       bare-fs: 4.7.2
