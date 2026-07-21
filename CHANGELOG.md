@@ -1,3 +1,9 @@
+## [0.1.0](https://github.com/zextras/carbonio-search-ui/compare/v0.0.11...v0.1.0) (2026-07-21)
+
+### Features
+
+* update shell-ui to latest 5.1.1([#209](https://github.com/zextras/carbonio-search-ui/issues/209)) ([0441d44](https://github.com/zextras/carbonio-search-ui/commit/0441d44dd84ee9b2185684424d5f7c9828880ce5))
+
 ## [0.0.11](https://github.com/zextras/carbonio-search-ui/compare/v0.0.10...v0.0.11) (2026-05-14)
 
 ### Bug Fixes
