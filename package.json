@@ -23,7 +23,8 @@
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "pnpm run type-check -- --watch",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx --resolve-plugins-relative-to node_modules/@zextras/carbonio-ui-configs src",
-		"test": "vitest run"
+		"test": "vitest run",
+		"test:ci": "vitest run --maxWorkers=2"
 	},
 	"keywords": [],
 	"author": "Zextras Team <https://www.zextras.com/carbonio/>",
