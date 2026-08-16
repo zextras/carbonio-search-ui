@@ -1,3 +1,9 @@
+## [0.1.1](https://github.com/zextras/carbonio-search-ui/compare/v0.1.0...v0.1.1) (2026-08-16)
+
+### Bug Fixes
+
+* **ci:** cap vitest forks to 2 to prevent k8s CPU saturation ([89a8e04](https://github.com/zextras/carbonio-search-ui/commit/89a8e04bc14534cd5f38d49ea0b738e9983ebe57))
+
 ## [0.1.0](https://github.com/zextras/carbonio-search-ui/compare/v0.0.11...v0.1.0) (2026-07-21)
 
 ### Features
