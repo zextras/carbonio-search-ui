@@ -1,3 +1,9 @@
+## [0.1.2](https://github.com/zextras/carbonio-search-ui/compare/v0.1.1...v0.1.2) (2026-08-25)
+
+### Bug Fixes
+
+* **ci:** run Docker build stages as root ([e2df60d](https://github.com/zextras/carbonio-search-ui/commit/e2df60d2d6dc1a65d0975be1a6f264f0c06391c3))
+
 ## [0.1.1](https://github.com/zextras/carbonio-search-ui/compare/v0.1.0...v0.1.1) (2026-08-16)
 
 ### Bug Fixes
