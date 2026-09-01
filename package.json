@@ -29,10 +29,10 @@
 	"keywords": [],
 	"author": "Zextras Team <https://www.zextras.com/carbonio/>",
 	"license": "AGPL-3.0-only",
-	"packageManager": "pnpm@10.32.1",
+	"packageManager": "pnpm@11.25.0",
 	"engines": {
 		"node": "v22",
-		"pnpm": ">=10"
+		"pnpm": ">=11.25.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.29.7",
