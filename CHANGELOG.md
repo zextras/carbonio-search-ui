@@ -1,3 +1,9 @@
+## [0.1.3](https://github.com/zextras/carbonio-search-ui/compare/v0.1.2...v0.1.3) (2026-09-14)
+
+### Bug Fixes
+
+* **deps:** update dependency react-router-dom to v6.30.6 [security] ([#217](https://github.com/zextras/carbonio-search-ui/issues/217)) ([54bcf0c](https://github.com/zextras/carbonio-search-ui/commit/54bcf0c0f408023e663c0a54a8b5555c2b3835f0))
+
 ## [0.1.2](https://github.com/zextras/carbonio-search-ui/compare/v0.1.1...v0.1.2) (2026-08-25)
 
 ### Bug Fixes
