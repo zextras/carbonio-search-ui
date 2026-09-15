@@ -91,7 +91,6 @@
 		},
 		"onlyBuiltDependencies": [
 			"core-js",
-			"protobufjs",
 			"unrs-resolver"
 		]
 	},
