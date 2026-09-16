@@ -9,7 +9,9 @@ module.exports = (api) => {
 		: {
 				modules: false,
 				useBuiltIns: 'usage',
-				corejs: 3.41
+				// keep in sync with the core-js version in package.json: preset-env wants a string
+				// with the minor version, and the number 3.50 would evaluate to 3.5
+				corejs: '3.50'
 			};
 	return {
 		presets: [['@babel/preset-env', presetEnv], '@babel/preset-react', '@babel/preset-typescript'],
