@@ -138,9 +138,6 @@ importers:
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
-      prettier:
-        specifier: 3.9.8
-        version: 3.9.8
       semantic-release:
         specifier: 25.0.9
         version: 25.0.9(typescript@5.9.3)
