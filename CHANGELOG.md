@@ -1,3 +1,9 @@
+## [0.1.12](https://github.com/zextras/carbonio-search-ui/compare/v0.1.11...v0.1.12) (2026-10-06)
+
+### Other changes
+
+* **deps:** update dependency @types/node to v22.20.5 ([#236](https://github.com/zextras/carbonio-search-ui/issues/236)) ([e5aa3ee](https://github.com/zextras/carbonio-search-ui/commit/e5aa3ee0eb98497e5c582984855bea1c04e54841))
+
 ## [0.1.11](https://github.com/zextras/carbonio-search-ui/compare/v0.1.10...v0.1.11) (2026-09-30)
 
 ### Other changes
