@@ -73,8 +73,8 @@
 	"dependencies": {
 		"@emotion/react": "11.14.0",
 		"@emotion/styled": "11.14.1",
-		"@zextras/carbonio-design-system": "12.1.1",
-		"@zextras/carbonio-shell-ui": "15.2.12",
+		"@zextras/carbonio-design-system": "12.2.1",
+		"@zextras/carbonio-shell-ui": "15.3.15",
 		"core-js": "3.50.0",
 		"i18next": "22.5.1",
 		"immer": "10.2.0",
