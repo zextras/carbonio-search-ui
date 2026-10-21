@@ -1,3 +1,9 @@
+## [0.1.21](https://github.com/zextras/carbonio-search-ui/compare/v0.1.20...v0.1.21) (2026-10-21)
+
+### Other changes
+
+* **deps:** update dependency zextras/jenkins-lib-common to v5 ([f4530c9](https://github.com/zextras/carbonio-search-ui/commit/f4530c90abde30a0aac06fe934e8fe27f89f0dbd))
+
 ## [0.1.20](https://github.com/zextras/carbonio-search-ui/compare/v0.1.19...v0.1.20) (2026-10-20)
 
 ### Other changes
