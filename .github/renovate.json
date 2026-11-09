@@ -21,6 +21,12 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "devDependencies (weekly)",
       "schedule": ["before 6am on monday"]
+    },
+    {
+      "description": "Widen peer ranges instead of bumping them: the shared javascript preset forces rangeStrategy 'bump' globally, which narrows the range modules are built against (^12.0.0 -> ^12.2.1) without gaining anything. Widening stays silent for in-range releases and opens a PR only when a new major has to be allowed",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen"
     }
   ]
 }
