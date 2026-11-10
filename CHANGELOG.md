@@ -1,3 +1,9 @@
+## [0.1.26](https://github.com/zextras/carbonio-search-ui/compare/v0.1.25...v0.1.26) (2026-11-10)
+
+### Bug Fixes
+
+* **deps:** declare carbonio-shell-ui and carbonio-design-system as peer dependencies ([#255](https://github.com/zextras/carbonio-search-ui/issues/255)) ([5d8c79a](https://github.com/zextras/carbonio-search-ui/commit/5d8c79ae4a92506ea31504345facc39b463e5bd7))
+
 ## [0.1.25](https://github.com/zextras/carbonio-search-ui/compare/v0.1.24...v0.1.25) (2026-11-10)
 
 ### Other changes
