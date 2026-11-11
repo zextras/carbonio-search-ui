@@ -1,3 +1,9 @@
+## [0.1.27](https://github.com/zextras/carbonio-search-ui/compare/v0.1.26...v0.1.27) (2026-11-11)
+
+### Other changes
+
+* **deps:** update devdependencies (weekly) ([#253](https://github.com/zextras/carbonio-search-ui/issues/253)) ([58186ec](https://github.com/zextras/carbonio-search-ui/commit/58186ecb2df716839a650007a94d5bf996680364))
+
 ## [0.1.26](https://github.com/zextras/carbonio-search-ui/compare/v0.1.25...v0.1.26) (2026-11-10)
 
 ### Bug Fixes
