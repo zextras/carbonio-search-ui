@@ -1,3 +1,9 @@
+## [0.1.29](https://github.com/zextras/carbonio-search-ui/compare/v0.1.28...v0.1.29) (2026-11-18)
+
+### Other changes
+
+* **deps:** lock file maintenance ([#257](https://github.com/zextras/carbonio-search-ui/issues/257)) ([b98e08a](https://github.com/zextras/carbonio-search-ui/commit/b98e08ae016b02e9376091193dc7c93f42856319))
+
 ## [0.1.28](https://github.com/zextras/carbonio-search-ui/compare/v0.1.27...v0.1.28) (2026-11-17)
 
 ### Other changes
