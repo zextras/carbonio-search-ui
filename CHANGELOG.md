@@ -1,3 +1,9 @@
+## [0.1.30](https://github.com/zextras/carbonio-search-ui/compare/v0.1.29...v0.1.30) (2026-11-24)
+
+### Other changes
+
+* **deps:** update dependency @testing-library/user-event to v14.6.13 ([#258](https://github.com/zextras/carbonio-search-ui/issues/258)) ([3a62cae](https://github.com/zextras/carbonio-search-ui/commit/3a62cae00c0ab241b633b82f3197f54ff110e362))
+
 ## [0.1.29](https://github.com/zextras/carbonio-search-ui/compare/v0.1.28...v0.1.29) (2026-11-18)
 
 ### Other changes
