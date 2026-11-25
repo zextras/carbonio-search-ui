@@ -116,13 +116,11 @@ export const SearchBar = (): React.JSX.Element => {
 			if (inputTyped.length > 0) {
 				const newInputValue: typeof searchInputValue = [
 					...searchInputValue,
-					...inputTyped.split(' ').map(
-						(label, id): QueryChip => ({
-							id: `${id}`,
-							label,
-							hasAvatar: false
-						})
-					)
+					...inputTyped.split(' ').map((label, id): QueryChip => ({
+						id: `${id}`,
+						label,
+						hasAvatar: false
+					}))
 				];
 
 				setSearchInputValue(newInputValue);
@@ -151,20 +149,18 @@ export const SearchBar = (): React.JSX.Element => {
 			storedSuggestions
 				.filter((searchOption) => searchOption.app === currentSearchModuleRoute)
 				.reverse()
-				.map(
-					(item): SearchOption => ({
-						...item,
-						disabled: searchDisabled,
-						onClick: (): void => {
-							const newInputChip = {
-								...item, // FIXME: dropdown item fields are being passed down to chip
-								hasAvatar: false,
-								onClick: undefined
-							} satisfies ChipItem<string>;
-							setSearchInputValue((prevState) => [...prevState, newInputChip]);
-						}
-					})
-				),
+				.map((item): SearchOption => ({
+					...item,
+					disabled: searchDisabled,
+					onClick: (): void => {
+						const newInputChip = {
+							...item, // FIXME: dropdown item fields are being passed down to chip
+							hasAvatar: false,
+							onClick: undefined
+						} satisfies ChipItem<string>;
+						setSearchInputValue((prevState) => [...prevState, newInputChip]);
+					}
+				})),
 		[storedSuggestions, currentSearchModuleRoute, searchDisabled]
 	);
 
