@@ -57,7 +57,7 @@
 		"@types/react-dom": "18.3.7",
 		"@vitejs/plugin-react": "5.2.0",
 		"@vitest/coverage-v8": "4.1.12",
-		"@zextras/carbonio-ui-configs": "2.1.1",
+		"@zextras/carbonio-ui-configs": "3.0.20",
 		"@zextras/carbonio-ui-sdk": "2.5.0",
 		"dotenv": "16.6.1",
 		"eslint": "8.57.1",

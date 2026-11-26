@@ -39,19 +39,17 @@ export const ModuleSelector = (): React.JSX.Element | null => {
 
 	const dropdownItems = useMemo(
 		(): DropdownItem[] =>
-			searchViews.map(
-				({ id, label, icon, route }): DropdownItem => ({
-					id,
-					label,
-					icon,
-					onClick: (): void => {
-						// open the search view and update the module of moduleSelector
-						// order is important
-						navigate(`/${APP_ROUTE}`);
-						updateModule(route);
-					}
-				})
-			),
+			searchViews.map(({ id, label, icon, route }): DropdownItem => ({
+				id,
+				label,
+				icon,
+				onClick: (): void => {
+					// open the search view and update the module of moduleSelector
+					// order is important
+					navigate(`/${APP_ROUTE}`);
+					updateModule(route);
+				}
+			})),
 		[navigate, searchViews, updateModule]
 	);
 
