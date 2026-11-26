@@ -1,3 +1,9 @@
+## [0.1.33](https://github.com/zextras/carbonio-search-ui/compare/v0.1.32...v0.1.33) (2026-11-26)
+
+### Other changes
+
+* **deps-dev:** migrate to @zextras/carbonio-ui-configs 3.x ([#264](https://github.com/zextras/carbonio-search-ui/issues/264)) ([e1974a5](https://github.com/zextras/carbonio-search-ui/commit/e1974a58e350ad7314c1744068d51fa3c362029e))
+
 ## [0.1.32](https://github.com/zextras/carbonio-search-ui/compare/v0.1.31...v0.1.32) (2026-11-26)
 
 ### Other changes
